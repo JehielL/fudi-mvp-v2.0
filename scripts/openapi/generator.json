@@ -1,0 +1,12 @@
+{
+  "pubName": "fudi_api",
+  "pubLibrary": "fudi_api",
+  "pubVersion": "0.1.0",
+  "pubDescription": "Cliente generado del contrato de producto FUDI. No editar manualmente.",
+  "pubPublishTo": "none",
+  "serializationLibrary": "built_value",
+  "dateLibrary": "core",
+  "enumUnknownDefaultCase": true,
+  "hideGenerationTimestamp": true,
+  "disallowAdditionalPropertiesIfNotPresent": false
+}

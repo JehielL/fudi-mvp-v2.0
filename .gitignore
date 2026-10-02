@@ -46,3 +46,11 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Generated from committed ARB localization sources.
+/lib/app/l10n/generated/
+
+# Caches del paquete API; los serializers .g.dart y su lock si se versionan.
+/packages/fudi_api/.dart_tool/
+/packages/fudi_api/build/
+/packages/fudi_api/.openapi-generator/

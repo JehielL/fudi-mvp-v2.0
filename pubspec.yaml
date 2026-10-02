@@ -1,5 +1,5 @@
 name: fudi
-description: "A new Flutter project."
+description: "FUDI mobile-first frontend."
 publish_to: 'none'
 version: 0.1.0+1
 
@@ -9,6 +9,24 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^3.4.3
+  go_router: ^18.0.2
+  dio: ^5.11.1
+  built_value: ^8.13.0
+  fudi_api:
+    path: packages/fudi_api
+  # 9.x uses standalone material_ui types; keep Flutter's bundled Material API.
+  flex_color_scheme: ^8.4.0
+  lucide_flutter: ^1.47.0
+  cupertino_icons: ^2.0.0
+  flutter_svg: ^2.3.0
+  flutter_animate: ^4.5.2
+  gap: ^3.0.1
+  maplibre: ^0.3.6
+  geolocator: ^14.1.1
+  intl: ^0.20.3
 
 dev_dependencies:
   flutter_test:
@@ -16,4 +34,29 @@ dev_dependencies:
   flutter_lints: ^6.0.0
 
 flutter:
+  generate: true
   uses-material-design: true
+  assets:
+    - assets/brand/fudi-wordmark.png
+    - assets/catalog/editorial-table.jpg
+    - assets/fonts/archivo-OFL.txt
+    - assets/fonts/roboto-Apache-2.0.txt
+  fonts:
+    - family: Archivo
+      fonts:
+        - asset: assets/fonts/archivo-400.ttf
+          weight: 400
+        - asset: assets/fonts/archivo-500.ttf
+          weight: 500
+        - asset: assets/fonts/archivo-600.ttf
+          weight: 600
+        - asset: assets/fonts/archivo-700.ttf
+          weight: 700
+    - family: Archivo Condensed
+      fonts:
+        - asset: assets/fonts/archivo-condensed-600.ttf
+          weight: 600
+    # CanvasKit descarga su respaldo predeterminado si Roboto no esta en assets.
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/roboto-fallback-regular.ttf

@@ -1,0 +1,30 @@
+abstract final class FudiSizing {
+  static const touchTarget = 48.0;
+  static const control = 56.0;
+  static const controlLarge = 64.0;
+  static const icon = 20.0;
+  static const iconSmall = 16.0;
+  static const avatarSmall = 32.0;
+  static const avatar = 48.0;
+  static const avatarLarge = 64.0;
+  static const logoWidth = 112.0;
+  static const logoLarge = 160.0;
+  static const logoCompact = 88.0;
+  static const logoAspectRatio = 1447 / 659;
+  static const focusGap = 4.0;
+  static const focusStroke = 2.0;
+  static const sheetWidth = 640.0;
+  static const sheetHeightFactor = .88;
+  static const contentWidth = 1120.0;
+  static const contentSplit = 640.0;
+  static const tablet = 768.0;
+  static const desktop = 1200.0;
+  static const shellHeader = 80.0;
+  static const navigationIcon = 24.0;
+  static const navigationRail = 120.0;
+  static const navigationRailLarge = 168.0;
+  static const navigationSidebar = 256.0;
+  static const navigationLargeTextScale = 1.5;
+  static const navigationPreviewHeight = 400.0;
+  static const shellPreviewHeight = 560.0;
+}

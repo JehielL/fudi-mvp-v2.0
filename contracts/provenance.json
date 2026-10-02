@@ -1,0 +1,11 @@
+{
+  "source": "../../../fudi-backend/openapi.yaml",
+  "sourceSha256": "126ad2fa7a029dfa5ccf4b8a2498448eea4416ebc548681d13a147abad2a25cc",
+  "preparedSha256": "6973bd04647100fb87f2f4b2002cfc23390718947878827e15818e94ac03d1d9",
+  "openapi": "3.0.3",
+  "apiVersion": "2.1.0",
+  "generator": "dart-dio",
+  "generatorVersion": "7.25.0",
+  "generatorSha256": "41ce4f6b07f196676439d710759fa1ced7a08066d06ff1bf314681470289efae",
+  "adjustments": "scripts/openapi/prepare_contract.ps1"
+}
