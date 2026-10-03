@@ -50,11 +50,13 @@ DO NOT mechanically port:
 
 \- CSS/SCSS
 
-\- legacy visual patterns
+\- DOM-specific animation mechanisms
 
 
 
-Preserve behavior where appropriate, not implementation.
+Preservar la experiencia visual e interactiva; traducir la implementacion,
+no sustituir el diseno. Angular es la baseline funcional, visual, espacial,
+interactiva y de motion. Ver `docs/VISUAL-PARITY.md`.
 
 
 
@@ -298,7 +300,8 @@ Do not port Angular CSS.
 
 
 
-Do not reproduce Bootstrap visually.
+No introducir una apariencia Bootstrap generica. Las decisiones deliberadas
+del producto Angular se conservan, aunque su implementacion use Bootstrap.
 
 
 
@@ -326,13 +329,19 @@ Before implementing a migrated feature:
 
 4\. Verify those interactions against the backend or OpenAPI contract.
 
-5\. Separate legacy behavior from legacy presentation.
+5\. Auditar composicion, geometria, responsive, estados y motion de Angular.
 
-6\. Design the Flutter implementation according to the new architecture.
+6\. Inventariar interacciones y producir un Visual Contract con fuentes y
+mediciones reales. NO CODING before Visual Contract: no implementar UI hasta
+cerrar el contrato y resolver las incognitas que afectan al alcance implementado.
 
-7\. Implement it.
+7\. Implementar la misma experiencia nativamente en Flutter.
 
-8\. Test it.
+8\. Comparar Angular/Flutter a 390, 768, 1200 y 1440; registrar desviaciones,
+corregir paridad y ejecutar validacion funcional y de accesibilidad.
+
+Fases obligatorias A-G, plantillas y gates: `docs/VISUAL-PARITY.md` y
+`docs/templates/VISUAL-CONTRACT.md`.
 
 
 
@@ -360,11 +369,13 @@ If the legacy implementation contains contradictory or obviously broken behavior
 
 
 
-FUDI se moderniza como producto mobile-first, preservando su experiencia.
+Flutter moderniza la implementacion, no sustituye la direccion de diseno de FUDI.
 
 
 
-Do not make Flutter screens pixel-for-pixel copies of Angular.
+Conservar la experiencia perceptual de Angular; no copiar su DOM/CSS.
+Las diferencias de rasterizacion no exigen igualdad pixel a pixel y no autorizan
+cambios de composicion, proporcion, densidad, fotografia, controles ni motion.
 
 
 
@@ -386,22 +397,43 @@ Use Angular as the source of truth for:
 
 
 
-Angular tambien es referencia de UX: navegacion, jerarquia y paradigmas de
-experiencia. No se copian pixeles, CSS ni Bootstrap; se conservan los patrones
-que funcionan salvo cambio aprobado explicitamente.
-
-Preservar los paradigmas de UX existentes por defecto. La modernizacion
-tecnologica no implica redisenar la experiencia salvo aprobacion explicita.
-Mobile-first prioriza mejorar mobile, no autoriza cambiar la UX desktop.
+Angular es baseline visual, espacial, interactiva y de motion, no solo funcional.
+Conservar por defecto composicion, orden, proporciones, tamanos relativos,
+densidad, jerarquia, fotografia, botones, posiciones, overlays, hover, pressed,
+focus, transiciones, animaciones, reveals, dropdowns, responsive y microinteracciones.
+Una diferencia requiere una razon explicita en el Visual Deviation Register.
+Una decision visual o interactiva deliberada se conserva hasta que producto
+apruebe explicitamente cambiarla. "Modernizar" no significa simplificar.
+Mobile-first no autoriza sustituir la experiencia mobile ni desktop.
 
 En cada tarea distinguir:
 
-- CONSERVAR: experiencia, flujo y comportamiento existente que funciona.
-- MODERNIZAR: aspecto visual, responsive, tecnologia y componentes.
-- CAMBIAR: solo decisiones de experiencia aprobadas explicitamente.
+- CONSERVAR: experiencia funcional, visual, espacial, interactiva y de motion.
+- MODERNIZAR: tecnologia, arquitectura y mecanismos nativos con paridad perceptual.
+- CAMBIAR: solo decisiones de producto aprobadas explicitamente y registradas.
 
-Consumer usa navegacion superior o inferior segun espacio. Rail/sidebar son
-primitivas disponibles para futuros Business/Admin, no el patron consumer.
+DS y componentes compartidos no justifican homogeneizar pantallas deliberadamente
+distintas. Mantener logo original y tipografia Archivo/Archivo Condensed de MIG-002;
+la aprobacion tipografica no autoriza rehacer geometria ni jerarquia.
+Reproducir efectos DOM nativamente (scroll/animaciones/transform/opacity/easing).
+Hover desktop tiene equivalente pressed/tap en touch; reduced-motion debe
+respetarse y las adaptaciones de accesibilidad se documentan, no se ocultan.
+
+Secuencia vigente: MIG-003B -> MIG-010A -> MIG-011. MIG-010 esta DONE funcional,
+no DONE de paridad. MIG-011 a MIG-015 quedan gated; no iniciarlas automaticamente.
+No deformar FudiTopNavigation para construir el navbar rico: usar una capa
+consumer sobre la infraestructura de MIG-003A. No fabricar auth, roles ni destinos.
+
+El shell tecnico consumer de MIG-003A alterna navegacion superior/inferior segun
+espacio; NO define el navbar final. Angular combina header rico y bottom bajo992,
+con header colapsado hasta1200. Ver contrato MIG-003B A-C y decisiones responsive
+pendientes; no eliminar una superficie ni sus acciones por mantener cuatro ramas.
+Rail/sidebar siguen disponibles para futuros Business/Admin, no consumer.
+
+MIG-003B A-C: CONTRACT_READY; baseline CLOSED, implementacion NOT_STARTED y
+paridad PENDING_IMPLEMENTATION. La revision/autorizacion del usuario y decisiones
+de producto del alcance afectado preceden D-G; MIG-010A BLOCKED,011..015 GATED.
+Ver `docs/contracts/MIG-003B-NAVBAR-VISUAL-CONTRACT.md`.
 
 
 

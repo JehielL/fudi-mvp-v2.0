@@ -1,0 +1,69 @@
+[
+  {
+    "route": "/restaurant-list",
+    "selected": [
+      "Explorar"
+    ]
+  },
+  {
+    "route": "/restaurant-list/JAPANESE_FOOD",
+    "selected": [
+      "Explorar"
+    ]
+  },
+  {
+    "route": "/restaurant/900001/detail",
+    "selected": []
+  },
+  {
+    "route": "/bookings",
+    "selected": [
+      "Reservas"
+    ]
+  },
+  {
+    "route": "/menus",
+    "selected": []
+  },
+  {
+    "route": "/user/detail",
+    "selected": [
+      "Perfil"
+    ]
+  },
+  {
+    "y": 110,
+    "state": {
+      "hidden": true,
+      "transform": "matrix(1, 0, 0, 1, 0, 75)",
+      "opacity": "0"
+    }
+  },
+  {
+    "y": 160,
+    "state": {
+      "hidden": true,
+      "transform": "matrix(1, 0, 0, 1, 0, 75)",
+      "opacity": "0"
+    }
+  },
+  {
+    "y": 120,
+    "state": {
+      "hidden": false,
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1"
+    }
+  },
+  {
+    "y": 0,
+    "state": {
+      "hidden": false,
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "1"
+    }
+  },
+  {
+    "reducedBottom": "none"
+  }
+]

@@ -1,8 +1,13 @@
 # FUDI Flutter
 
-Base de la migracion Angular a Flutter, MIG-000 a MIG-003A. El producto dispone
-de shell responsive y cuatro destinos provisionales, sin features funcionales.
-El Design System tiene un catalogo interno separado. No hay peticiones backend.
+Migracion Angular a Flutter, MIG-000 a MIG-003A y MIG-010 funcional completadas.
+El producto dispone de shell responsive, Home con datos reales y tres destinos
+de shell todavia provisionales. Home consulta APIs publicas del backend configurado;
+el catalogo interno del Design System permanece separado y sin peticiones API.
+La paridad visual/interactiva de navbar y Home NO esta completada.
+MIG-003B A-C: [contrato baseline CLOSED](docs/contracts/MIG-003B-NAVBAR-VISUAL-CONTRACT.md),
+CONTRACT_READY; implementacion NOT_STARTED, revision de producto pendiente.
+Secuencia vigente: MIG-003B -> MIG-010A -> MIG-011 (gated).
 
 ## Requisitos
 
@@ -82,6 +87,7 @@ lib/
   core/            Configuracion, errores, logging y transporte HTTP
   design_system/   Tokens, temas, primitivas, shell responsive y catalogo interno
   features/shell/  Adaptador de navegacion y placeholders sin logica de producto
+  features/home/   Repositorio, providers, busqueda y presentacion de Home real
 ```
 
 Flujo de arranque: `main -> bootstrap -> ProviderScope -> FudiApp ->
@@ -104,21 +110,26 @@ Con texto grande la barra pasa a dos filas. La navegacion respeta safe areas,
 targets de 48 px, foco, Tab/Enter y labels ARB ES/EN. El teclado oculta la barra.
 La correccion de presentacion esta documentada en `docs/MIG-003A.md`.
 
-Preservar los paradigmas UX existentes es la opcion predeterminada. Angular
-es referencia de experiencia ademas de funcionalidad. Modernizar tecnologia,
-visual y responsive no implica redisenar experiencia sin aprobacion explicita.
-Las siguientes tareas separan CONSERVAR, MODERNIZAR y CAMBIAR.
+Angular es baseline funcional, visual, espacial, interactiva y de motion.
+Flutter moderniza la implementacion, no sustituye la direccion de diseno de FUDI.
+Conservar decisiones deliberadas hasta aprobacion explicita de producto.
+MODERNIZAR se limita a tecnologia y mecanismos nativos equivalentes, no permite
+simplificar composicion, fotografia, controles o animaciones por defecto.
+Antes de implementar UI: Visual Contract. Despues: comparacion Angular/Flutter
+a 390/768/1200/1440 y Visual Deviation Register. Reglas en
+[VISUAL-PARITY](docs/VISUAL-PARITY.md); estado vigente en [MIGRATION](MIGRATION.md).
 
-Flujo previsto de datos: widget -> provider/aplicacion -> repositorio de la
+Flujo de datos: widget -> provider/aplicacion -> repositorio de la
 feature -> API -> Dio. `dioProvider` es infraestructura: no se importa desde
 widgets. `ApiClient.execute` permite envolver peticiones y decodificacion, o
 llamadas a un futuro cliente generado, para que solo salgan datos o `AppFailure`.
 La closure de esa operacion pertenece a la capa API/repositorio, nunca a un widget.
-No hay repositorios de negocio. MIG-001 incorpora los DTOs generados en
+Home tiene repositorio de producto desde MIG-010. MIG-001 incorpora los DTOs generados en
 `packages/fudi_api`, separados del codigo manual. `GeneratedApiClient.execute`
 devuelve DTOs o `AppFailure`; `executeVoid` admite operaciones sin cuerpo.
 `FudiApi` recibe exactamente el mismo Dio de `dioProvider`, sin activar
-interceptores de autenticacion generados. No se invoca ninguna API al arrancar.
+interceptores de autenticacion generados. Home carga restaurantes, selecciones
+editoriales y promociones publicas; los otros destinos siguen sin feature real.
 La integracion reutiliza los serializers generados con una politica explicita
 para date-time: conserva timestamps Java sin offset como hora civil, sin
 convertirlos automaticamente a UTC segun la zona del dispositivo. No asumir
@@ -144,7 +155,8 @@ el logo original mediante `FudiLogo`, nunca como texto tipografico sustituto.
 No se han trasladado estilos CSS.
 La localizacion usa ARB en espanol e ingles y los delegates oficiales; el sistema
 elige el idioma y el fallback generado es ingles. Mercado, moneda y zona horaria
-son conceptos separados del idioma y se implementaran cuando lo requieran las features.
+son conceptos separados del idioma. Home permite elegir ES/PA/WORLDWIDE en
+memoria de sesion; persistencia y preferencias autenticadas siguen pendientes.
 
 FlexColorScheme 8.4 es la ultima rama estable compatible con los tipos Material
 incluidos en Flutter que utiliza este proyecto. La version 9 usa los paquetes
@@ -222,9 +234,14 @@ flutter build web --release --dart-define=APP_ENV=production
 ```
 
 Abrir `http://localhost:5174/#/design-system` en el primer caso. El puerto 5174
-solo se usa para el catalogo sin backend; no implica que su origen tenga CORS.
+permite previsualizar el catalogo interno; no implica que su origen tenga CORS.
+Si se abre Home en ese origen, realiza las peticiones publicas configuradas y
+necesita un backend disponible y CORS compatible; no contiene fixtures runtime.
 El build de produccion no debe incluir el define que habilita el catalogo.
 
 Los informes completos estan en `docs/MIG-000.md`, `docs/MIG-001.md`,
-`docs/MIG-002.md`, `docs/MIG-003.md` y `docs/MIG-003A.md`.
-MIG-010 permanece TODO y no se inicia automaticamente.
+`docs/MIG-002.md`, `docs/MIG-003.md`, `docs/MIG-003A.md` y `docs/MIG-010.md`.
+MIG-010 esta DONE funcional, con paridad visual parcial. Los briefs de las pasadas
+pendientes son [MIG-003B](docs/MIG-003B.md) y [MIG-010A](docs/MIG-010A.md).
+La [plantilla de Visual Contract](docs/templates/VISUAL-CONTRACT.md) es obligatoria
+para las nuevas fases. MIG-011 a MIG-015 quedan gated; no se inician automaticamente.

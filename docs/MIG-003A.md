@@ -1,6 +1,13 @@
 # MIG-003A: correccion de UX consumer
 
-Estado: DONE tras validacion completa. MIG-003 sigue DONE. MIG-010 permanece TODO.
+Estado tecnico: DONE tras validacion completa. MIG-003 sigue DONE.
+Actualizacion 03/10/2026: navbar rico NO esta DONE de paridad; sigue en
+[MIG-003B](MIG-003B.md). MIG-010 ya esta DONE funcional, con paridad pendiente
+en MIG-010A. Rige [VISUAL-PARITY](VISUAL-PARITY.md) y el roadmap vigente.
+El resto del informe conserva el historial de esta fase, no autoriza redisenos.
+MIG-003B A-C documenta ahora el navbar real: top rico y bottom complementarios
+bajo992, header colapsado hasta1200. El criterio tecnico responsive descrito abajo
+no reemplaza ese contrato ni resuelve PD-01. Baseline CLOSED, codigo NOT_STARTED.
 
 <!-- Hallmark: correccion de componentes; autocritica P4 H4 E4 S4 R5 V4.
 Se conserva deliberadamente el paradigma solicitado, no se rota una macroestructura. -->
@@ -210,4 +217,5 @@ fit; un teclado real o navegador movil con safe areas requiere QA en dispositivo
 La referencia Angular es inspeccion de codigo, no una comparacion pixel-perfect.
 No se afirma validacion nativa Android/iOS en esta correccion web.
 
-MIG-010 sigue TODO. Finalizar MIG-003A no autoriza iniciarla.
+En el cierre original MIG-010 seguia TODO. Estado vigente: DONE funcional;
+MIG-003B -> MIG-010A son las siguientes pasadas. MIG-011 permanece GATED.

@@ -1,0 +1,519 @@
+{
+  "date": "2026-10-03T07:30:19.861Z",
+  "markdownFiles": 23,
+  "localLinks": 98,
+  "broken": [],
+  "trailingWhitespace": [],
+  "manifestPayloadHashesChecked": 63,
+  "hashFailures": [],
+  "protectedIdentical": true,
+  "sourceCopyIdentical": true,
+  "states": {
+    "MIG003B": "CONTRACT_READY, not DONE",
+    "archaeology": "COMPLETE",
+    "inventory": "COMPLETE",
+    "baselineContract": "CLOSED, product review PENDING",
+    "implementation": "NOT_STARTED",
+    "parity": "PENDING_IMPLEMENTATION",
+    "MIG010A": "BLOCKED",
+    "MIG011to015": "GATED"
+  },
+  "validation": {
+    "format": "716 files,0 changed",
+    "analyze": "No issues found",
+    "tests": "290 PASS",
+    "diffCheck": "PASS"
+  },
+  "links": [
+    {
+      "file": "docs\\contracts\\MIG-003B-NAVBAR-VISUAL-CONTRACT.md",
+      "target": "../mig003b/SOURCES.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\contracts\\MIG-003B-NAVBAR-VISUAL-CONTRACT.md",
+      "target": "../mig003b/NAVBAR_INFORMATION_ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\contracts\\MIG-003B-NAVBAR-VISUAL-CONTRACT.md",
+      "target": "../mig003b/MEASUREMENTS.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\contracts\\MIG-003B-NAVBAR-VISUAL-CONTRACT.md",
+      "target": "../mig003b/INTERACTIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\contracts\\MIG-003B-NAVBAR-VISUAL-CONTRACT.md",
+      "target": "../mig003b/MOTION.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\contracts\\MIG-003B-NAVBAR-VISUAL-CONTRACT.md",
+      "target": "../mig003b/DEPENDENCIES.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\contracts\\MIG-003B-NAVBAR-VISUAL-CONTRACT.md",
+      "target": "../mig003b/DEVIATIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\contracts\\MIG-003B-NAVBAR-VISUAL-CONTRACT.md",
+      "target": "../mig003b/evidence/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003.md",
+      "target": "VISUAL-PARITY.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003A.md",
+      "target": "MIG-003B.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003A.md",
+      "target": "VISUAL-PARITY.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003B.md",
+      "target": "contracts/MIG-003B-NAVBAR-VISUAL-CONTRACT.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003B.md",
+      "target": "mig003b/SOURCES.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003B.md",
+      "target": "mig003b/NAVBAR_INFORMATION_ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003B.md",
+      "target": "mig003b/MEASUREMENTS.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003B.md",
+      "target": "mig003b/INTERACTIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003B.md",
+      "target": "mig003b/MOTION.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003B.md",
+      "target": "mig003b/DEPENDENCIES.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003B.md",
+      "target": "mig003b/DEVIATIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003B.md",
+      "target": "mig003b/evidence/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003B.md",
+      "target": "mig003b/REPORT.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003B.md",
+      "target": "VISUAL-PARITY.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-003B.md",
+      "target": "../MIGRATION.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-010.md",
+      "target": "VISUAL-PARITY.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-010.md",
+      "target": "MIG-010A.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-010.md",
+      "target": "MIG-003B.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-010.md",
+      "target": "MIG-010A.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-010A.md",
+      "target": "MIG-010.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\MIG-010A.md",
+      "target": "VISUAL-PARITY.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\DEPENDENCIES.md",
+      "target": "NAVBAR_INFORMATION_ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\DEVIATIONS.md",
+      "target": "evidence/pairs.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\DEVIATIONS.md",
+      "target": "evidence/flutter-observations.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\DEVIATIONS.md",
+      "target": "evidence/measurements.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "manifest.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "measurements.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "keyboard-settled.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "styles-states.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "subitem-styles.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "motion-samples.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "active-routes.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "followups.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "market-observations.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "flutter-observations.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "assets.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "flag-geometry.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "protected-before.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "protected-after.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "source-copy-proof.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "documentation-qa.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "overview.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "actors.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "pairs.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "1440x900-anonymous-light-1x-explore.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "1200x800-anonymous-light-1x-explore.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "390x844-anonymous-light-1x-global-open.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "390x844-anonymous-light-1x-explore.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "390x844-anonymous-light-1x-about.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "390x844-anonymous-light-1x-market.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "1440x900-admin-light-1x-business.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "1440x900-user-light-1x-account.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "320x844-anonymous-light-1x-explore.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "390x844-anonymous-light-2x-explore.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "1440x900-anonymous-light-2x-explore.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "1440x900-anonymous-dark-1x-explore.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\evidence\\README.md",
+      "target": "1440x900-user-light-1x-scrolled.png",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\INTERACTIONS.md",
+      "target": "SOURCES.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\INTERACTIONS.md",
+      "target": "evidence/keyboard-settled.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\MEASUREMENTS.md",
+      "target": "evidence/measurements.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\MEASUREMENTS.md",
+      "target": "SOURCES.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\MEASUREMENTS.md",
+      "target": "evidence/flag-geometry.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\MEASUREMENTS.md",
+      "target": "INTERACTIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\MEASUREMENTS.md",
+      "target": "MOTION.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\MOTION.md",
+      "target": "evidence/motion-samples.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\NAVBAR_INFORMATION_ARCHITECTURE.md",
+      "target": "SOURCES.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\NAVBAR_INFORMATION_ARCHITECTURE.md",
+      "target": "DEPENDENCIES.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\REPORT.md",
+      "target": "SOURCES.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\REPORT.md",
+      "target": "NAVBAR_INFORMATION_ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\REPORT.md",
+      "target": "MEASUREMENTS.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\REPORT.md",
+      "target": "MOTION.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\REPORT.md",
+      "target": "INTERACTIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\REPORT.md",
+      "target": "DEVIATIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\REPORT.md",
+      "target": "DEPENDENCIES.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\REPORT.md",
+      "target": "../contracts/MIG-003B-NAVBAR-VISUAL-CONTRACT.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\SOURCES.md",
+      "target": "evidence/manifest.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\SOURCES.md",
+      "target": "evidence/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs\\mig003b\\SOURCES.md",
+      "target": "evidence/measurements.json",
+      "exists": true
+    },
+    {
+      "file": "docs\\VISUAL-PARITY.md",
+      "target": "templates/VISUAL-CONTRACT.md",
+      "exists": true
+    },
+    {
+      "file": "MIGRATION.md",
+      "target": "docs/VISUAL-PARITY.md",
+      "exists": true
+    },
+    {
+      "file": "MIGRATION.md",
+      "target": "docs/MIG-003B.md",
+      "exists": true
+    },
+    {
+      "file": "MIGRATION.md",
+      "target": "docs/MIG-010.md",
+      "exists": true
+    },
+    {
+      "file": "MIGRATION.md",
+      "target": "docs/MIG-010A.md",
+      "exists": true
+    },
+    {
+      "file": "MIGRATION.md",
+      "target": "docs/templates/VISUAL-CONTRACT.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/contracts/MIG-003B-NAVBAR-VISUAL-CONTRACT.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/VISUAL-PARITY.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "MIGRATION.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/MIG-003B.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/MIG-010A.md",
+      "exists": true
+    },
+    {
+      "file": "README.md",
+      "target": "docs/templates/VISUAL-CONTRACT.md",
+      "exists": true
+    }
+  ]
+}

@@ -1,0 +1,2284 @@
+[
+  {
+    "name": "nav-order-skip",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "A",
+      "text": "Saltar al contenido principal",
+      "class": "skip-link"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "nav-order-0",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "A",
+      "text": "",
+      "class": "navbar-brand"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "nav-order-1",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "A",
+      "text": "Inicio",
+      "class": "nav-link active"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "nav-order-2",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Explorar",
+      "class": "nav-link nav-link--mega"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "nav-order-3",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Nosotros",
+      "class": "nav-link nav-link--mega"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "nav-order-4",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "",
+      "class": "dropdown-toggle market-selector__trigger"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "nav-order-5",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "QA Local",
+      "class": "dropdown-toggle nav-link d-flex align-items-center"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "nav-order-6",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "INPUT",
+      "text": "",
+      "class": "ng-untouched ng-pristine ng-valid"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "mega-ArrowDown",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Explorar",
+      "class": "nav-link nav-link--mega"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 40,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "mega-ArrowUp",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Explorar",
+      "class": "nav-link nav-link--mega"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "mega-Home",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Explorar",
+      "class": "nav-link nav-link--mega"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "mega-End",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Explorar",
+      "class": "nav-link nav-link--mega"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "mega-ArrowLeft",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Explorar",
+      "class": "nav-link nav-link--mega"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "mega-ArrowRight",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Explorar",
+      "class": "nav-link nav-link--mega"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "mega-Enter",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Explorar",
+      "class": "nav-link nav-link--mega"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "true"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".mega-panel",
+        "rect": {
+          "x": 620.6171875,
+          "y": 73.21875,
+          "width": 840,
+          "height": 346.9375
+        }
+      }
+    ]
+  },
+  {
+    "name": "mega-Tab",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "A",
+      "text": "RestaurantesEncuentra tu próxima mesa",
+      "class": "mega-item"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "true"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".mega-panel",
+        "rect": {
+          "x": 620.6171875,
+          "y": 73.21875,
+          "width": 840,
+          "height": 346.9375
+        }
+      }
+    ]
+  },
+  {
+    "name": "mega-Shift+Tab",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Explorar",
+      "class": "nav-link nav-link--mega"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "true"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".mega-panel",
+        "rect": {
+          "x": 620.6171875,
+          "y": 73.21875,
+          "width": 840,
+          "height": 346.9375
+        }
+      }
+    ]
+  },
+  {
+    "name": "mega-Space",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Explorar",
+      "class": "nav-link nav-link--mega"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "mega-item-Escape",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BODY",
+      "text": "Saltar al contenido principalInicio Explorar DescubreRestaurantesEncuentra tu próxima mesa",
+      "class": ""
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "market-ArrowDown",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "",
+      "class": "dropdown-toggle market-selector__trigger show"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "true"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".market-selector__menu",
+        "rect": {
+          "x": 1175.46875,
+          "y": 61.90625,
+          "width": 48.9375,
+          "height": 121.875
+        }
+      }
+    ]
+  },
+  {
+    "name": "market-ArrowDown",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "España",
+      "class": "dropdown-item market-option market-option--active"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "true"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".market-selector__menu",
+        "rect": {
+          "x": 1175.46875,
+          "y": 61.90625,
+          "width": 48.9375,
+          "height": 121.875
+        }
+      }
+    ]
+  },
+  {
+    "name": "market-End",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Worldwide",
+      "class": "dropdown-item market-option"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "true"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".market-selector__menu",
+        "rect": {
+          "x": 1175.46875,
+          "y": 61.90625,
+          "width": 48.9375,
+          "height": 121.875
+        }
+      }
+    ]
+  },
+  {
+    "name": "market-Home",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "España",
+      "class": "dropdown-item market-option market-option--active"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "true"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".market-selector__menu",
+        "rect": {
+          "x": 1175.46875,
+          "y": 61.90625,
+          "width": 48.9375,
+          "height": 121.875
+        }
+      }
+    ]
+  },
+  {
+    "name": "market-ArrowUp",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "España",
+      "class": "dropdown-item market-option market-option--active"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "true"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".market-selector__menu",
+        "rect": {
+          "x": 1175.46875,
+          "y": 61.90625,
+          "width": 48.9375,
+          "height": 121.875
+        }
+      }
+    ]
+  },
+  {
+    "name": "market-ArrowLeft",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "España",
+      "class": "dropdown-item market-option market-option--active"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "true"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".market-selector__menu",
+        "rect": {
+          "x": 1175.46875,
+          "y": 61.90625,
+          "width": 48.9375,
+          "height": 121.875
+        }
+      }
+    ]
+  },
+  {
+    "name": "market-ArrowRight",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "España",
+      "class": "dropdown-item market-option market-option--active"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "true"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".market-selector__menu",
+        "rect": {
+          "x": 1175.46875,
+          "y": 61.90625,
+          "width": 48.9375,
+          "height": 121.875
+        }
+      }
+    ]
+  },
+  {
+    "name": "market-Tab",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Panamá",
+      "class": "dropdown-item market-option"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "true"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".market-selector__menu",
+        "rect": {
+          "x": 1175.46875,
+          "y": 61.90625,
+          "width": 48.9375,
+          "height": 121.875
+        }
+      }
+    ]
+  },
+  {
+    "name": "market-Shift+Tab",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "España",
+      "class": "dropdown-item market-option market-option--active"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "true"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".market-selector__menu",
+        "rect": {
+          "x": 1175.46875,
+          "y": 61.90625,
+          "width": 48.9375,
+          "height": 121.875
+        }
+      }
+    ]
+  },
+  {
+    "name": "market-Escape",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "",
+      "class": "dropdown-toggle market-selector__trigger"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "account-Enter",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "QA Local",
+      "class": "dropdown-toggle nav-link d-flex align-items-center show"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "true"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".user-menu",
+        "rect": {
+          "x": 1100,
+          "y": 75.171875,
+          "width": 300,
+          "height": 306.625
+        }
+      }
+    ]
+  },
+  {
+    "name": "account-ArrowDown",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "Mi cuentaTus datos y preferencias",
+      "class": "dropdown-item mega-item"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "true"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".user-menu",
+        "rect": {
+          "x": 1100,
+          "y": 75.171875,
+          "width": 300,
+          "height": 306.625
+        }
+      }
+    ]
+  },
+  {
+    "name": "account-End",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "A",
+      "text": "Cerrar sesión",
+      "class": "dropdown-item mega-item mega-item--logout"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 2242,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "true"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".user-menu",
+        "rect": {
+          "x": 1100,
+          "y": 75.171875,
+          "width": 300,
+          "height": 306.625
+        }
+      }
+    ]
+  },
+  {
+    "name": "account-Space",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "A",
+      "text": "Cerrar sesión",
+      "class": "dropdown-item mega-item mega-item--logout"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 3029,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "true"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".user-menu",
+        "rect": {
+          "x": 1100,
+          "y": 75.171875,
+          "width": 300,
+          "height": 306.625
+        }
+      }
+    ]
+  },
+  {
+    "name": "account-Escape",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "QA Local",
+      "class": "dropdown-toggle nav-link d-flex align-items-center"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 3029,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "market-Escape-mobile-or-desktop",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "",
+      "class": "navbar-toggler"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "account-scroll",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "QA Local",
+      "class": "dropdown-toggle nav-link d-flex align-items-center show"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": "hidden"
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "true"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "true"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".user-menu",
+        "rect": {
+          "x": 30.59375,
+          "y": 355.890625,
+          "width": 320,
+          "height": 298.625
+        }
+      }
+    ]
+  },
+  {
+    "name": "account-resize",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 420,
+      "height": 844,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "QA Local",
+      "class": "dropdown-toggle nav-link d-flex align-items-center show"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": "hidden"
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "true"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "true"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".user-menu",
+        "rect": {
+          "x": 30.59375,
+          "y": 355.890625,
+          "width": 320,
+          "height": 298.625
+        }
+      }
+    ]
+  },
+  {
+    "name": "route-close",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 420,
+      "height": 844,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "A",
+      "text": "",
+      "class": "navbar-brand"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": "hidden"
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "true"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "market-Escape-mobile-or-desktop",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "",
+      "class": "dropdown-toggle market-selector__trigger"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "account-scroll",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "QA Local",
+      "class": "dropdown-toggle nav-link d-flex align-items-center show"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 200,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "true"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".user-menu",
+        "rect": {
+          "x": 1100,
+          "y": 75.171875,
+          "width": 300,
+          "height": 306.625
+        }
+      }
+    ]
+  },
+  {
+    "name": "account-resize",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1470,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "BUTTON",
+      "text": "QA Local",
+      "class": "dropdown-toggle nav-link d-flex align-items-center show"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 200,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "true"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".user-menu",
+        "rect": {
+          "x": 1130,
+          "y": 75.171875,
+          "width": 300,
+          "height": 306.625
+        }
+      }
+    ]
+  },
+  {
+    "name": "route-close",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1470,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "A",
+      "text": "",
+      "class": "navbar-brand"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "false"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "route-change-to-catalog",
+    "url": "http://localhost:5181/restaurant-list",
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "MAIN",
+      "text": "RestaurantesBuscar por nombreCiudadCocinaTodas las cocinasAfricanaAlemanaAmericanaArabeArg",
+      "class": ""
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      }
+    ],
+    "panels": []
+  },
+  {
+    "name": "logout-Enter",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "A",
+      "text": "Cerrar sesión",
+      "class": "dropdown-item mega-item mega-item--logout"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "true"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".user-menu",
+        "rect": {
+          "x": 1100,
+          "y": 76.484375,
+          "width": 300,
+          "height": 306.625
+        }
+      }
+    ]
+  },
+  {
+    "name": "logout-Space",
+    "url": "http://localhost:5181/home",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "focus": {
+      "tag": "A",
+      "text": "Cerrar sesión",
+      "class": "dropdown-item mega-item mega-item--logout"
+    },
+    "scroll": {
+      "x": 0,
+      "y": 787,
+      "bodyOverflow": ""
+    },
+    "expanded": [
+      {
+        "name": "Abrir menú de navegación",
+        "expanded": "false"
+      },
+      {
+        "name": "Explorar",
+        "expanded": "false"
+      },
+      {
+        "name": "Nosotros",
+        "expanded": "false"
+      },
+      {
+        "name": "Mercado actual: España",
+        "expanded": "false"
+      },
+      {
+        "name": "QA Local",
+        "expanded": "true"
+      },
+      {
+        "name": "",
+        "expanded": "false"
+      }
+    ],
+    "panels": [
+      {
+        "s": ".user-menu",
+        "rect": {
+          "x": 1100,
+          "y": 75.171875,
+          "width": 300,
+          "height": 306.625
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "at": 974.6000000089407,
+    "opacity": "0.264038",
+    "transform": "matrix(0.99264, 0, 0, 0.99264, 0, -5.8877)",
+    "visibility": "visible"
+  },
+  {
+    "at": 1048.2000000029802,
+    "opacity": "0.853289",
+    "transform": "matrix(0.998533, 0, 0, 0.998533, 0, -1.17369)",
+    "visibility": "visible"
+  },
+  {
+    "at": 1130.300000011921,
+    "opacity": "1",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)",
+    "visibility": "visible"
+  },
+  {
+    "at": 1266.9000000059605,
+    "opacity": "1",
+    "transform": "matrix(1, 0, 0, 1, 0, 0)",
+    "visibility": "visible"
+  }
+]
