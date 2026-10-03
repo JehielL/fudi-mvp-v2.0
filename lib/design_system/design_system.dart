@@ -15,6 +15,7 @@ export 'components/fudi_navigation_destination.dart';
 export 'components/fudi_navigation_rail.dart';
 export 'components/fudi_search_field.dart';
 export 'components/fudi_skeleton.dart';
+export 'components/fudi_top_navigation.dart';
 export 'motion/fudi_motion.dart';
 export 'theme/fudi_theme.dart';
 export 'tokens/fudi_colors.dart';

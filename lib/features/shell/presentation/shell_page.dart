@@ -8,6 +8,7 @@ import 'package:lucide_flutter/lucide_flutter.dart';
 import '../../../app/l10n/generated/app_localizations.dart';
 import '../../../app/navigation/app_destination.dart';
 import '../../../design_system/design_system.dart';
+import '../../home/presentation/home_page.dart';
 
 class ShellPage extends StatelessWidget {
   const ShellPage({
@@ -21,6 +22,9 @@ class ShellPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (!notFound && destination == AppDestination.home) {
+      return Semantics(role: SemanticsRole.tabPanel, child: const HomePage());
+    }
     final strings = AppLocalizations.of(context);
     final theme = Theme.of(context);
     if (!notFound) {

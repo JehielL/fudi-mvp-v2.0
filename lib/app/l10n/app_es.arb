@@ -84,8 +84,102 @@
   "navAccount": "Cuenta",
   "navPrimary": "Navegaci\u00f3n principal",
   "dsNavigation": "Navegaci\u00f3n",
-  "dsNavigationBar": "Navegaci\u00f3n inferior",
-  "dsNavigationRail": "Rail de navegaci\u00f3n",
-  "dsNavigationSidebar": "Navegaci\u00f3n lateral",
-  "dsAppShell": "Estructura"
+  "dsNavigationBar": "Navegaci\u00f3n inferior (Consumer)",
+  "dsTopNavigation": "Navegaci\u00f3n superior (Consumer)",
+  "dsNavigationRail": "Rail de navegaci\u00f3n (Business)",
+  "dsNavigationSidebar": "Navegaci\u00f3n lateral (Business)",
+  "dsAppShell": "Estructura",
+  "homeTitle": "Reserva tu mesa",
+  "homeLead": "Tu próxima mesa, en segundos",
+  "homeSubtitle": "Encuentra restaurantes, favoritos y ofertas sin llamadas ni vueltas.",
+  "homeSearch": "Buscar restaurante",
+  "homeSearchHint": "Nombre del restaurante",
+  "homeSearching": "Buscando restaurantes",
+  "homeNoMatches": "Sin coincidencias. Puedes continuar al catálogo.",
+  "homeSearchError": "No se pudieron cargar las sugerencias. Puedes continuar al catálogo.",
+  "homeMarket": "Mercado",
+  "homeSpain": "España",
+  "homePanama": "Panamá",
+  "homeWorldwide": "Todo el mundo",
+  "homeQuickRestaurants": "Restaurantes",
+  "homeQuickRated": "Más valorados",
+  "homeQuickOffers": "Ofertas",
+  "homeQuickArea": "Por zona",
+  "homeRestaurants": "Restaurantes para explorar",
+  "homeCatalog": "Ver restaurantes",
+  "homeSelections": "Selecciones FÜDI",
+  "homeAllSelections": "Ver selecciones",
+  "homeOffers": "Promociones especiales",
+  "homeEmptyRestaurants": "No hay restaurantes en este mercado",
+  "homeEmptyRestaurantsBody": "Prueba otro mercado o visita el catálogo.",
+  "homeEmptyArticles": "No hay selecciones disponibles",
+  "homeEmptyArticlesBody": "Vuelve a explorar las recomendaciones más adelante.",
+  "homeEmptyOffers": "No hay promociones activas",
+  "homeEmptyOffersBody": "Puedes seguir explorando restaurantes.",
+  "homeLoadError": "No se pudo cargar esta sección",
+  "homeLoadErrorBody": "El resto de Inicio sigue disponible. Vuelve a intentarlo.",
+  "homeImageMissing": "Imagen no disponible",
+  "homeRestaurantCount": "{count, plural, =1 {1 restaurante} other {{count} restaurantes}}",
+  "@homeRestaurantCount": {"placeholders": {"count": {"type": "int"}}},
+  "homeRestaurantAction": "Ver restaurante",
+  "homeArticleAction": "Leer selección",
+  "homeStoryTitle": "Tu próxima experiencia gastronómica te espera",
+  "homeBook": "Reservar ahora",
+  "homeSteps": "Así de fácil es reservar",
+  "homeStepChoose": "Elige tu restaurante",
+  "homeStepChooseBody": "Explora el catálogo y encuentra tu próxima mesa.",
+  "homeStepDate": "Selecciona día y hora",
+  "homeStepDateBody": "Consulta las opciones disponibles del restaurante.",
+  "homeStepConfirm": "Confirma tu reserva",
+  "homeStepConfirmBody": "Revisa los detalles y completa tu reserva.",
+  "homeBusiness": "Tu restaurante también tiene sitio aquí",
+  "homeBusinessBody": "Conecta con nuevos comensales y forma parte de FÜDI.",
+  "homeContact": "Contactar con FÜDI",
+  "homeFounding": "Conocer Founding 50",
+  "homeOpenFailed": "No se pudo abrir el destino.",
+  "homePrevious": "Página anterior",
+  "homeNext": "Página siguiente",
+  "homePages": "{current} de {total}",
+  "homeRating": "Valoración: {rating}",
+  "homeOffersCount": "{count, plural, =1 {1 promoción} other {{count} promociones}}",
+  "homeCuisine": "{code, select, JAPANESE_FOOD {Japonesa} THAI_FOOD {Tailandesa} SPAIN_FOOD {Española} CHINESE_FOOD {China} BRUNCH {Desayuno} COFFEE_STORE {Cafetería} BAR {Bar} VIETNAM_FOOD {Vietnamita} ITALIAN_FOOD {Italiana} FRENCH_FOOD {Francesa} TEX_MEX_FOOD {Mexicana} KOREAN_FOOD {Coreana} VEGAN_FOOD {Vegana} AMERICAN_FOOD {Americana} GERMAN_FOOD {Alemana} PORTUGUESE_FOOD {Portuguesa} FUSION_FOOD {Fusión} GREEK_FOOD {Griega} INDIAN_FOOD {India} PERUVIAN_FOOD {Peruana} CANADIAN_FOOD {Canadiense} DOMINICAN_FOOD {Dominicana} LATIN_AMERICAN_FOOD {Latinoamericana} ARGENTINE_FOOD {Argentina} BALKAN_FOOD {Balcanes} GEORGIAN_FOOD {Georgiana} ARABIAN_FOOD {Árabe} MARRAKECH_FOOD {Marroquí} ASIAN_FOOD {Asiática} AFRICAN_FOOD {Africana} MAGHREB_FOOD {Magrebí} CARIBBEAN_FOOD {Caribeña} other {Restaurante}}",
+  "homeCategory": "{code, select, BRUNCH {Brunch} DATE_NIGHT {Cena en pareja} HIDDEN_GEMS {Lugares por descubrir} FAMILY {En familia} TERRACE {Terrazas} CHEF_PICK {Selección del chef} NEW_OPENINGS {Nuevas aperturas} OFFERS {Ofertas} TOP_LIST {Destacados} EDITORIAL {Editorial} other {Selección}}",
+  "@homePages": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@homeRating": {
+    "placeholders": {
+      "rating": {
+        "type": "String"
+      }
+    }
+  },
+  "@homeOffersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@homeCuisine": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@homeCategory": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  }
 }

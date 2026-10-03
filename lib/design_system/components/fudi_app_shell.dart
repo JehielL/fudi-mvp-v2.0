@@ -5,7 +5,7 @@ import '../tokens/fudi_sizing.dart';
 import '../tokens/fudi_spacing.dart';
 import 'fudi_navigation_bar.dart';
 import 'fudi_navigation_destination.dart';
-import 'fudi_navigation_rail.dart';
+import 'fudi_top_navigation.dart';
 
 class FudiAppShell extends StatelessWidget {
   const FudiAppShell({
@@ -28,8 +28,16 @@ class FudiAppShell extends StatelessWidget {
   @override
   Widget build(BuildContext context) => LayoutBuilder(
     builder: (context, constraints) {
-      final mobile = constraints.maxWidth < FudiSizing.tablet;
-      final extended = constraints.maxWidth >= FudiSizing.desktop;
+      final wide =
+          constraints.maxWidth >= FudiSizing.tablet &&
+          (constraints.maxWidth >= FudiSizing.desktop ||
+              constraints.maxWidth >= constraints.maxHeight);
+      final available =
+          (constraints.maxWidth - MediaQuery.paddingOf(context).horizontal)
+              .clamp(0.0, FudiSizing.contentWidth);
+      final top =
+          wide &&
+          available >= FudiTopNavigation.minimumWidth(context, destinations);
       final keyboardOpen = MediaQuery.viewInsetsOf(context).bottom > 0;
       final content = FocusTraversalOrder(
         order: const NumericFocusOrder(1),
@@ -39,7 +47,7 @@ class FudiAppShell extends StatelessWidget {
         policy: OrderedTraversalPolicy(),
         child: Scaffold(
           resizeToAvoidBottomInset: true,
-          bottomNavigationBar: mobile && !keyboardOpen
+          bottomNavigationBar: !top && !keyboardOpen
               ? FocusTraversalOrder(
                   order: const NumericFocusOrder(0),
                   child: _NavigationFocus(
@@ -58,50 +66,38 @@ class FudiAppShell extends StatelessWidget {
                 )
               : null,
           body: SafeArea(
-            bottom: !mobile || keyboardOpen,
-            child: mobile
-                ? Column(
-                    children: [
-                      const SizedBox(
-                        height: FudiSizing.shellHeader,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: FudiSpacing.lg,
-                          ),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: FudiLogo(),
-                          ),
-                        ),
+            bottom: top || keyboardOpen,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                if (top)
+                  FocusTraversalOrder(
+                    order: const NumericFocusOrder(0),
+                    child: _NavigationFocus(
+                      autofocus: autofocusNavigation,
+                      child: FudiTopNavigation(
+                        destinations: destinations,
+                        selectedIndex: selectedIndex,
+                        autofocus: autofocusNavigation,
+                        onDestinationSelected: onDestinationSelected,
+                        semanticLabel: navigationLabel,
                       ),
-                      Expanded(child: content),
-                    ],
+                    ),
                   )
-                : Row(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      FocusTraversalOrder(
-                        order: const NumericFocusOrder(0),
-                        child: _NavigationFocus(
-                          autofocus: autofocusNavigation,
-                          child: FudiNavigationRail(
-                            destinations: destinations,
-                            selectedIndex: selectedIndex,
-                            autofocus: autofocusNavigation,
-                            onDestinationSelected: onDestinationSelected,
-                            semanticLabel: navigationLabel,
-                            extended: extended,
-                            leading: FudiLogo(
-                              width: extended
-                                  ? FudiSizing.logoWidth
-                                  : FudiSizing.logoCompact,
-                            ),
-                          ),
-                        ),
+                else
+                  const SizedBox(
+                    height: FudiSizing.shellHeader,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: FudiSpacing.lg),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: FudiLogo(),
                       ),
-                      Expanded(child: content),
-                    ],
+                    ),
                   ),
+                Expanded(child: content),
+              ],
+            ),
           ),
         ),
       );

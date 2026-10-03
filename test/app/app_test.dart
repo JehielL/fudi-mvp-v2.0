@@ -7,13 +7,15 @@ import 'package:fudi/core/network/network_providers.dart';
 import 'package:fudi/design_system/design_system.dart';
 import 'package:fudi/features/shell/presentation/shell_page.dart';
 
+import '../home/home_fixture.dart';
+
 void main() {
   testWidgets('app starts at the named shell route without creating Dio', (
     tester,
   ) async {
     tester.platformDispatcher.localesTestValue = const [Locale('es')];
     addTearDown(tester.platformDispatcher.clearLocalesTestValue);
-    final container = ProviderContainer();
+    final container = ProviderContainer(overrides: homeFixtureOverrides);
     addTearDown(container.dispose);
     await tester.pumpWidget(
       UncontrolledProviderScope(container: container, child: const FudiApp()),
@@ -26,7 +28,7 @@ void main() {
     expect(find.byType(ShellPage), findsOneWidget);
     expect(find.byType(FudiLogo), findsOneWidget);
     expect(find.text('F\u00dcDI'), findsNothing);
-    expect(find.text('Pr\u00f3ximamente'), findsOneWidget);
+    expect(find.text('Reserva tu mesa'), findsOneWidget);
     expect(container.exists(dioProvider), isFalse);
     expect(tester.takeException(), isNull);
   });
@@ -34,9 +36,11 @@ void main() {
   testWidgets('English locale is resolved by the app', (tester) async {
     tester.platformDispatcher.localesTestValue = const [Locale('en')];
     addTearDown(tester.platformDispatcher.clearLocalesTestValue);
-    await tester.pumpWidget(const ProviderScope(child: FudiApp()));
+    await tester.pumpWidget(
+      ProviderScope(overrides: homeFixtureOverrides, child: const FudiApp()),
+    );
     await tester.pumpAndSettle();
-    expect(find.text('Coming soon'), findsOneWidget);
+    expect(find.text('Book your table'), findsOneWidget);
   });
 
   testWidgets('unknown links show a localized error and return to root', (
@@ -44,7 +48,7 @@ void main() {
   ) async {
     tester.platformDispatcher.localesTestValue = const [Locale('es')];
     addTearDown(tester.platformDispatcher.clearLocalesTestValue);
-    final container = ProviderContainer();
+    final container = ProviderContainer(overrides: homeFixtureOverrides);
     addTearDown(container.dispose);
     await tester.pumpWidget(
       UncontrolledProviderScope(container: container, child: const FudiApp()),
@@ -61,14 +65,16 @@ void main() {
       container.read(appRouterProvider).routeInformationProvider.value.uri.path,
       '/',
     );
-    expect(find.text('Pr\u00f3ximamente'), findsOneWidget);
+    expect(find.text('Reserva tu mesa'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
   testWidgets('system brightness switches the central theme', (tester) async {
     addTearDown(tester.platformDispatcher.clearPlatformBrightnessTestValue);
     tester.platformDispatcher.platformBrightnessTestValue = Brightness.light;
-    await tester.pumpWidget(const ProviderScope(child: FudiApp()));
+    await tester.pumpWidget(
+      ProviderScope(overrides: homeFixtureOverrides, child: const FudiApp()),
+    );
     await tester.pumpAndSettle();
     var theme = Theme.of(tester.element(find.byType(ShellPage)));
     expect(theme.brightness, Brightness.light);
@@ -94,7 +100,9 @@ void main() {
       addTearDown(() => tester.binding.setSurfaceSize(null));
       tester.platformDispatcher.textScaleFactorTestValue = 2;
       addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
-      await tester.pumpWidget(const ProviderScope(child: FudiApp()));
+      await tester.pumpWidget(
+        ProviderScope(overrides: homeFixtureOverrides, child: const FudiApp()),
+      );
       await tester.pumpAndSettle();
       expect(find.byType(ShellPage), findsOneWidget);
       expect(tester.takeException(), isNull);

@@ -13,6 +13,8 @@ import 'package:fudi/features/shell/presentation/consumer_shell_page.dart';
 import 'package:fudi/features/shell/presentation/shell_page.dart';
 import 'package:go_router/go_router.dart';
 
+import '../home/home_fixture.dart';
+
 Future<GoRouter> mount(
   WidgetTester tester, {
   String path = '/',
@@ -36,7 +38,10 @@ Future<GoRouter> mount(
   );
   addTearDown(router.dispose);
   final container = ProviderContainer(
-    overrides: [appRouterProvider.overrideWithValue(router)],
+    overrides: [
+      appRouterProvider.overrideWithValue(router),
+      ...homeFixtureOverrides,
+    ],
   );
   addTearDown(container.dispose);
   await tester.pumpWidget(
@@ -92,7 +97,7 @@ void main() {
     }
 
     for (final brightness in Brightness.values) {
-      for (final width in [320.0, 390.0, 768.0, 1440.0]) {
+      for (final width in [320.0, 390.0, 768.0, 1200.0, 1440.0]) {
         for (final scale in [1.0, 2.0]) {
           testWidgets('Shell $width / $language / $brightness / $scale', (
             tester,
@@ -104,15 +109,18 @@ void main() {
               brightness: brightness,
               scale: scale,
             );
-            if (width < FudiSizing.tablet) {
+            expect(find.byType(FudiNavigationRail), findsNothing);
+            expect(tester.getSize(find.byType(ShellPage)).width, width);
+            if (width < FudiSizing.desktop) {
               expect(find.byType(FudiNavigationBar), findsOneWidget);
-              expect(find.byType(FudiNavigationRail), findsNothing);
+              expect(find.byType(FudiTopNavigation), findsNothing);
             } else {
-              final rail = tester.widget<FudiNavigationRail>(
-                find.byType(FudiNavigationRail),
-              );
-              expect(rail.extended, width >= FudiSizing.desktop);
+              expect(find.byType(FudiTopNavigation), findsOneWidget);
               expect(find.byType(FudiNavigationBar), findsNothing);
+              expect(
+                tester.getSize(find.byType(FudiTopNavigation)).height,
+                lessThanOrEqualTo(96),
+              );
             }
             for (final destination in AppDestination.values) {
               final label = labels(language)[destination.index];
@@ -242,7 +250,7 @@ void main() {
     expect(router.routeInformationProvider.value.uri.path, '/discover');
   });
 
-  for (final width in [320.0, 390.0, 768.0, 1440.0]) {
+  for (final width in [320.0, 390.0, 768.0, 1200.0, 1440.0]) {
     testWidgets('Tab alcanza navegacion desde el arranque / $width', (
       tester,
     ) async {
@@ -275,6 +283,35 @@ void main() {
       );
     });
   }
+
+  testWidgets('Resize bottom/top mantiene seleccion y pilas de ramas', (
+    tester,
+  ) async {
+    final router = await mount(tester, path: '/discover');
+    router.push<void>('/discover?depth=2');
+    await tester.pumpAndSettle();
+    await tester.tap(find.byTooltip('Cuenta'));
+    await tester.pumpAndSettle();
+    await tester.binding.setSurfaceSize(const Size(1440, 900));
+    await tester.pumpAndSettle();
+    expect(find.byType(FudiTopNavigation), findsOneWidget);
+    expect(
+      tester.widget<FudiAppShell>(find.byType(FudiAppShell)).selectedIndex,
+      3,
+    );
+    await tester.tap(find.byTooltip('Explorar'));
+    await tester.pumpAndSettle();
+    expect(router.canPop(), isTrue);
+    await tester.binding.setSurfaceSize(const Size(768, 1024));
+    await tester.pumpAndSettle();
+    expect(find.byType(FudiNavigationBar), findsOneWidget);
+    expect(router.canPop(), isTrue);
+    expect(await tester.binding.handlePopRoute(), isTrue);
+    await tester.pumpAndSettle();
+    expect(router.canPop(), isFalse);
+    expect(router.routeInformationProvider.value.uri.path, '/discover');
+    expect(tester.takeException(), isNull);
+  });
 
   testWidgets('Catalogo fuera del shell; pop retorna a la rama de origen', (
     tester,

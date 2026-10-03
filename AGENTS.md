@@ -360,7 +360,7 @@ If the legacy implementation contains contradictory or obviously broken behavior
 
 
 
-FÜDI is being redesigned as a mobile-first product.
+FUDI se moderniza como producto mobile-first, preservando su experiencia.
 
 
 
@@ -386,7 +386,22 @@ Use Angular as the source of truth for:
 
 
 
-Not as the source of truth for visual design.
+Angular tambien es referencia de UX: navegacion, jerarquia y paradigmas de
+experiencia. No se copian pixeles, CSS ni Bootstrap; se conservan los patrones
+que funcionan salvo cambio aprobado explicitamente.
+
+Preservar los paradigmas de UX existentes por defecto. La modernizacion
+tecnologica no implica redisenar la experiencia salvo aprobacion explicita.
+Mobile-first prioriza mejorar mobile, no autoriza cambiar la UX desktop.
+
+En cada tarea distinguir:
+
+- CONSERVAR: experiencia, flujo y comportamiento existente que funciona.
+- MODERNIZAR: aspecto visual, responsive, tecnologia y componentes.
+- CAMBIAR: solo decisiones de experiencia aprobadas explicitamente.
+
+Consumer usa navegacion superior o inferior segun espacio. Rail/sidebar son
+primitivas disponibles para futuros Business/Admin, no el patron consumer.
 
 
 

@@ -1,6 +1,6 @@
 # FUDI Flutter
 
-Base de la migracion Angular a Flutter, MIG-000 a MIG-003. El producto dispone
+Base de la migracion Angular a Flutter, MIG-000 a MIG-003A. El producto dispone
 de shell responsive y cuatro destinos provisionales, sin features funcionales.
 El Design System tiene un catalogo interno separado. No hay peticiones backend.
 
@@ -93,9 +93,21 @@ Un enlace desconocido permite volver al inicio sin exponer su URI. No existen
 redirecciones de autenticacion ni aliases heredados. Detalles, Auth, Business y
 modales futuros podran vivir fuera del shell. Decisiones y limites: `docs/MIG-003.md`.
 
-Menos de 768 px: barra inferior; desde 768: rail; desde 1200: lateral extendido.
+Consumer mantiene dos patrones: barra inferior en mobile y tablet vertical;
+cabecera superior en desktop y tablet horizontal con espacio suficiente. Desde
+768 px se evalua geometria y ajuste real de las etiquetas a la escala activa;
+desde 1200 px se prefiere cabecera si cabe. El ancho util descuenta safe areas.
+La marca y los enlaces se limitan a `FudiSizing.contentWidth`; el cuerpo ocupa
+todo el ancho disponible y cada feature futura decidira su composicion.
+No hay rail/sidebar consumer; se conservan como primitivas para Business/Admin.
 Con texto grande la barra pasa a dos filas. La navegacion respeta safe areas,
 targets de 48 px, foco, Tab/Enter y labels ARB ES/EN. El teclado oculta la barra.
+La correccion de presentacion esta documentada en `docs/MIG-003A.md`.
+
+Preservar los paradigmas UX existentes es la opcion predeterminada. Angular
+es referencia de experiencia ademas de funcionalidad. Modernizar tecnologia,
+visual y responsive no implica redisenar experiencia sin aprobacion explicita.
+Las siguientes tareas separan CONSERVAR, MODERNIZAR y CAMBIAR.
 
 Flujo previsto de datos: widget -> provider/aplicacion -> repositorio de la
 feature -> API -> Dio. `dioProvider` es infraestructura: no se importa desde
@@ -214,4 +226,5 @@ solo se usa para el catalogo sin backend; no implica que su origen tenga CORS.
 El build de produccion no debe incluir el define que habilita el catalogo.
 
 Los informes completos estan en `docs/MIG-000.md`, `docs/MIG-001.md`,
-`docs/MIG-002.md` y `docs/MIG-003.md`. MIG-010 no se inicia automaticamente.
+`docs/MIG-002.md`, `docs/MIG-003.md` y `docs/MIG-003A.md`.
+MIG-010 permanece TODO y no se inicia automaticamente.

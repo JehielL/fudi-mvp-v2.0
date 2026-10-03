@@ -81,8 +81,102 @@
   "navAccount": "Account",
   "navPrimary": "Primary navigation",
   "dsNavigation": "Navigation",
-  "dsNavigationBar": "Bottom navigation",
-  "dsNavigationRail": "Navigation rail",
-  "dsNavigationSidebar": "Sidebar navigation",
-  "dsAppShell": "Structure"
+  "dsNavigationBar": "Bottom navigation (Consumer)",
+  "dsTopNavigation": "Top navigation (Consumer)",
+  "dsNavigationRail": "Navigation rail (Business)",
+  "dsNavigationSidebar": "Sidebar navigation (Business)",
+  "dsAppShell": "Structure",
+  "homeTitle": "Book your table",
+  "homeLead": "Your next table, in seconds",
+  "homeSubtitle": "Find restaurants, favourites and offers without calls or hassle.",
+  "homeSearch": "Find a restaurant",
+  "homeSearchHint": "Restaurant name",
+  "homeSearching": "Finding restaurants",
+  "homeNoMatches": "No matches. You can continue to the catalogue.",
+  "homeSearchError": "Suggestions could not be loaded. You can continue to the catalogue.",
+  "homeMarket": "Market",
+  "homeSpain": "Spain",
+  "homePanama": "Panama",
+  "homeWorldwide": "Worldwide",
+  "homeQuickRestaurants": "Restaurants",
+  "homeQuickRated": "Top rated",
+  "homeQuickOffers": "Offers",
+  "homeQuickArea": "By area",
+  "homeRestaurants": "Restaurants to explore",
+  "homeCatalog": "View restaurants",
+  "homeSelections": "FÜDI selections",
+  "homeAllSelections": "View selections",
+  "homeOffers": "Special offers",
+  "homeEmptyRestaurants": "No restaurants in this market",
+  "homeEmptyRestaurantsBody": "Try another market or visit the catalogue.",
+  "homeEmptyArticles": "No selections available",
+  "homeEmptyArticlesBody": "Come back to explore recommendations later.",
+  "homeEmptyOffers": "No active offers",
+  "homeEmptyOffersBody": "You can keep exploring restaurants.",
+  "homeLoadError": "This section could not be loaded",
+  "homeLoadErrorBody": "The rest of Home is still available. Please try again.",
+  "homeImageMissing": "Image unavailable",
+  "homeRestaurantCount": "{count, plural, =1 {1 restaurant} other {{count} restaurants}}",
+  "@homeRestaurantCount": {"placeholders": {"count": {"type": "int"}}},
+  "homeRestaurantAction": "View restaurant",
+  "homeArticleAction": "Read selection",
+  "homeStoryTitle": "Your next dining experience awaits",
+  "homeBook": "Book now",
+  "homeSteps": "Booking is this easy",
+  "homeStepChoose": "Choose your restaurant",
+  "homeStepChooseBody": "Explore the catalogue and find your next table.",
+  "homeStepDate": "Select a day and time",
+  "homeStepDateBody": "Check the restaurant's available options.",
+  "homeStepConfirm": "Confirm your booking",
+  "homeStepConfirmBody": "Review the details and complete your booking.",
+  "homeBusiness": "There is a place for your restaurant here",
+  "homeBusinessBody": "Connect with new diners and become part of FÜDI.",
+  "homeContact": "Contact FÜDI",
+  "homeFounding": "Discover Founding 50",
+  "homeOpenFailed": "The destination could not be opened.",
+  "homePrevious": "Previous page",
+  "homeNext": "Next page",
+  "homePages": "{current} of {total}",
+  "homeRating": "Rating: {rating}",
+  "homeOffersCount": "{count, plural, =1 {1 offer} other {{count} offers}}",
+  "homeCuisine": "{code, select, JAPANESE_FOOD {Japanese} THAI_FOOD {Thai} SPAIN_FOOD {Spanish} CHINESE_FOOD {Chinese} BRUNCH {Breakfast} COFFEE_STORE {Coffee shop} BAR {Bar} VIETNAM_FOOD {Vietnamese} ITALIAN_FOOD {Italian} FRENCH_FOOD {French} TEX_MEX_FOOD {Mexican} KOREAN_FOOD {Korean} VEGAN_FOOD {Vegan} AMERICAN_FOOD {American} GERMAN_FOOD {German} PORTUGUESE_FOOD {Portuguese} FUSION_FOOD {Fusion} GREEK_FOOD {Greek} INDIAN_FOOD {Indian} PERUVIAN_FOOD {Peruvian} CANADIAN_FOOD {Canadian} DOMINICAN_FOOD {Dominican} LATIN_AMERICAN_FOOD {Latin American} ARGENTINE_FOOD {Argentinian} BALKAN_FOOD {Balkan} GEORGIAN_FOOD {Georgian} ARABIAN_FOOD {Arabic} MARRAKECH_FOOD {Moroccan} ASIAN_FOOD {Asian} AFRICAN_FOOD {African} MAGHREB_FOOD {Maghrebi} CARIBBEAN_FOOD {Caribbean} other {Restaurant}}",
+  "homeCategory": "{code, select, BRUNCH {Brunch} DATE_NIGHT {Date night} HIDDEN_GEMS {Hidden gems} FAMILY {Family} TERRACE {Terraces} CHEF_PICK {Chef's choice} NEW_OPENINGS {New openings} OFFERS {Offers} TOP_LIST {Highlights} EDITORIAL {Editorial} other {Selection}}",
+  "@homePages": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@homeRating": {
+    "placeholders": {
+      "rating": {
+        "type": "String"
+      }
+    }
+  },
+  "@homeOffersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@homeCuisine": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@homeCategory": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  }
 }

@@ -615,6 +615,15 @@ class _DesignSystemPageState extends State<DesignSystemPage> {
                             semanticLabel: s.dsNavigationBar,
                           ),
                           const SizedBox(height: FudiSpacing.lg),
+                          Text(s.dsTopNavigation, style: type.titleLarge),
+                          const SizedBox(height: FudiSpacing.sm),
+                          FudiTopNavigation(
+                            destinations: _navigationDestinations(s),
+                            selectedIndex: _navigationIndex,
+                            onDestinationSelected: _selectNavigation,
+                            semanticLabel: s.dsTopNavigation,
+                          ),
+                          const SizedBox(height: FudiSpacing.lg),
                           Text(s.dsNavigationRail, style: type.titleLarge),
                           const SizedBox(height: FudiSpacing.sm),
                           SizedBox(

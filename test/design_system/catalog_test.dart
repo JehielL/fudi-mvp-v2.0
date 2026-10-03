@@ -9,6 +9,8 @@ import 'package:fudi/design_system/catalog/design_system_page.dart';
 import 'package:fudi/design_system/design_system.dart';
 import 'package:fudi/features/shell/presentation/shell_page.dart';
 
+import '../home/home_fixture.dart';
+
 Widget catalog({Locale locale = const Locale('es'), double scale = 2}) =>
     MaterialApp(
       theme: FudiTheme.dark,
@@ -26,7 +28,7 @@ Widget catalog({Locale locale = const Locale('es'), double scale = 2}) =>
     );
 
 void main() {
-  for (final width in [320.0, 390.0, 768.0, 1440.0]) {
+  for (final width in [320.0, 390.0, 768.0, 1200.0, 1440.0]) {
     for (final locale in ['es', 'en']) {
       for (final brightness in [Brightness.light, Brightness.dark]) {
         testWidgets(
@@ -41,7 +43,8 @@ void main() {
               await tester.pumpAndSettle();
             }
             expect(tester.takeException(), isNull);
-            expect(find.byType(FudiLogo), findsNWidgets(2));
+            expect(find.byType(FudiLogo), findsNWidgets(3));
+            expect(find.byType(FudiTopNavigation), findsWidgets);
             expect(find.text('F\u00dcDI'), findsNothing);
             expect(
               tester.getTopLeft(find.byKey(const Key('catalog-light'))).dy,
@@ -104,7 +107,10 @@ void main() {
       (tester) async {
         final router = createAppRouter(enableDesignSystem: enabled);
         final container = ProviderContainer(
-          overrides: [appRouterProvider.overrideWithValue(router)],
+          overrides: [
+            appRouterProvider.overrideWithValue(router),
+            ...homeFixtureOverrides,
+          ],
         );
         addTearDown(router.dispose);
         addTearDown(container.dispose);

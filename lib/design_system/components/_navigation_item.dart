@@ -16,6 +16,7 @@ class NavigationItem extends StatelessWidget {
     required this.selected,
     required this.onPressed,
     this.horizontal = false,
+    this.inline = false,
     this.autofocus = false,
   });
 
@@ -23,6 +24,7 @@ class NavigationItem extends StatelessWidget {
   final bool selected;
   final VoidCallback? onPressed;
   final bool horizontal;
+  final bool inline;
   final bool autofocus;
 
   @override
@@ -39,7 +41,7 @@ class NavigationItem extends StatelessWidget {
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
       style:
-          (horizontal
+          (horizontal || inline
                   ? Theme.of(context).textTheme.labelLarge!
                   : Theme.of(context).textTheme.labelMedium!)
               .copyWith(
@@ -75,7 +77,9 @@ class NavigationItem extends StatelessWidget {
                 ),
                 padding: WidgetStatePropertyAll(
                   EdgeInsets.symmetric(
-                    horizontal: horizontal ? FudiSpacing.sm : FudiSpacing.xs,
+                    horizontal: horizontal || inline
+                        ? FudiSpacing.sm
+                        : FudiSpacing.xs,
                     vertical: FudiSpacing.sm,
                   ),
                 ),
@@ -87,13 +91,22 @@ class NavigationItem extends StatelessWidget {
                   ),
                 ),
                 backgroundColor: WidgetStatePropertyAll(
-                  selected ? p.surfaceMuted : Colors.transparent,
+                  selected && !inline ? p.surfaceMuted : Colors.transparent,
                 ),
                 overlayColor: WidgetStatePropertyAll(
                   p.primary.withValues(alpha: .12),
                 ),
               ),
-              child: horizontal
+              child: inline
+                  ? Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        label,
+                        const SizedBox(height: FudiSpacing.xs),
+                        indicator,
+                      ],
+                    )
+                  : horizontal
                   ? Row(
                       children: [
                         indicator,

@@ -14,7 +14,14 @@ The migration is not intended to reproduce the legacy UI.
 
 
 
-The migration is also an opportunity to redesign FÜDI as a mobile-first product.
+La migracion moderniza FUDI como producto mobile-first sin redisenar su UX
+por defecto. Angular es referencia funcional y de experiencia, no una fuente
+para copiar CSS o Bootstrap.
+
+Preservar los paradigmas de UX existentes por defecto. La modernizacion
+tecnologica no implica redisenar la experiencia salvo aprobacion explicita.
+Cada tarea distingue CONSERVAR (experiencia/flujo), MODERNIZAR
+(visual/responsive/tecnologia) y CAMBIAR (solo decisiones aprobadas).
 
 
 
@@ -221,4 +228,10 @@ Platforms:
 | MIG-002 Design System | DONE |
 
 | MIG-003 Application shell | DONE |
+
+| MIG-003A Correccion UX consumer | DONE |
+
+| MIG-010 Home / Discovery | DONE |
+
+| MIG-011 Restaurant Detail | TODO |
 

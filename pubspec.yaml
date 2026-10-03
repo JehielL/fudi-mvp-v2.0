@@ -15,6 +15,7 @@ dependencies:
   go_router: ^18.0.2
   dio: ^5.11.1
   built_value: ^8.13.0
+  built_collection: ^5.1.1
   fudi_api:
     path: packages/fudi_api
   # 9.x uses standalone material_ui types; keep Flutter's bundled Material API.
@@ -27,6 +28,7 @@ dependencies:
   maplibre: ^0.3.6
   geolocator: ^14.1.1
   intl: ^0.20.3
+  url_launcher: ^6.3.3
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +41,7 @@ flutter:
   assets:
     - assets/brand/fudi-wordmark.png
     - assets/catalog/editorial-table.jpg
+    - assets/home/story-banner.png
     - assets/fonts/archivo-OFL.txt
     - assets/fonts/roboto-Apache-2.0.txt
   fonts:
