@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lucide_flutter/lucide_flutter.dart';
 
 import '../../../app/l10n/generated/app_localizations.dart';
 import '../../../design_system/design_system.dart';
@@ -196,65 +197,83 @@ class _HomeSearchState extends ConsumerState<HomeSearch> {
                         constraints: BoxConstraints(
                           maxHeight: MediaQuery.sizeOf(context).height * .35,
                         ),
-                        child: Material(
-                          color: FudiPalette.of(context).surface,
-                          elevation: 4,
-                          borderRadius: BorderRadius.circular(8),
-                          clipBehavior: Clip.antiAlias,
-                          child: SingleChildScrollView(
-                            child: state == null
-                                ? const SizedBox.shrink()
-                                : state.when(
-                                    skipLoadingOnRefresh: false,
-                                    skipLoadingOnReload: false,
-                                    loading: () => Semantics(
-                                      liveRegion: true,
-                                      label: s.homeSearching,
-                                      child: const FudiSkeleton(height: 48),
-                                    ),
-                                    error: (_, _) =>
-                                        _message(s.homeSearchError),
-                                    data: (rows) => rows.isEmpty
-                                        ? _message(s.homeNoMatches)
-                                        : Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              for (
-                                                var i = 0;
-                                                i < rows.length;
-                                                i++
-                                              )
-                                                Semantics(
-                                                  key: _optionKeys[i],
-                                                  selected: i == _selected,
-                                                  child: ExcludeFocusTraversal(
-                                                    child: ListTile(
-                                                      selected: i == _selected,
-                                                      minTileHeight: 48,
-                                                      title: Text(rows[i].name),
-                                                      subtitle:
-                                                          rows[i].location ==
-                                                              null
-                                                          ? null
-                                                          : Text(
-                                                              rows[i].location!,
-                                                            ),
-                                                      onTap: () {
-                                                        _portal.hide();
-                                                        setState(() {
-                                                          _open = false;
-                                                          _selected = -1;
-                                                        });
-                                                        widget.onRestaurant(
-                                                          rows[i],
-                                                        );
-                                                      },
+                        child: TweenAnimationBuilder<double>(
+                          tween: Tween(begin: 0, end: 1),
+                          duration: MediaQuery.disableAnimationsOf(context)
+                              ? Duration.zero
+                              : const Duration(milliseconds: 160),
+                          curve: Curves.ease,
+                          builder: (_, value, child) => Opacity(
+                            opacity: value,
+                            child: Transform.translate(
+                              offset: Offset(0, -6 * (1 - value)),
+                              child: child,
+                            ),
+                          ),
+                          child: Material(
+                            color: FudiPalette.of(context).surface,
+                            elevation: 4,
+                            borderRadius: BorderRadius.circular(8),
+                            clipBehavior: Clip.antiAlias,
+                            child: SingleChildScrollView(
+                              child: state == null
+                                  ? const SizedBox.shrink()
+                                  : state.when(
+                                      skipLoadingOnRefresh: false,
+                                      skipLoadingOnReload: false,
+                                      loading: () => Semantics(
+                                        liveRegion: true,
+                                        label: s.homeSearching,
+                                        child: const FudiSkeleton(height: 48),
+                                      ),
+                                      error: (_, _) =>
+                                          _message(s.homeSearchError),
+                                      data: (rows) => rows.isEmpty
+                                          ? _message(s.homeNoMatches)
+                                          : Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                for (
+                                                  var i = 0;
+                                                  i < rows.length;
+                                                  i++
+                                                )
+                                                  Semantics(
+                                                    key: _optionKeys[i],
+                                                    selected: i == _selected,
+                                                    child: ExcludeFocusTraversal(
+                                                      child: ListTile(
+                                                        selected:
+                                                            i == _selected,
+                                                        minTileHeight: 48,
+                                                        title: Text(
+                                                          rows[i].name,
+                                                        ),
+                                                        subtitle:
+                                                            rows[i].location ==
+                                                                null
+                                                            ? null
+                                                            : Text(
+                                                                rows[i]
+                                                                    .location!,
+                                                              ),
+                                                        onTap: () {
+                                                          _portal.hide();
+                                                          setState(() {
+                                                            _open = false;
+                                                            _selected = -1;
+                                                          });
+                                                          widget.onRestaurant(
+                                                            rows[i],
+                                                          );
+                                                        },
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                            ],
-                                          ),
-                                  ),
+                                              ],
+                                            ),
+                                    ),
+                            ),
                           ),
                         ),
                       ),
@@ -262,11 +281,46 @@ class _HomeSearchState extends ConsumerState<HomeSearch> {
                   ),
                 ),
               ),
-              child: FudiSearchField(
+              child: Semantics(
                 label: s.homeSearch,
-                placeholder: s.homeSearchHint,
-                controller: _controller,
-                onSubmitted: (_) => _submit(items),
+                child: TextFormField(
+                  controller: _controller,
+                  textInputAction: TextInputAction.search,
+                  onFieldSubmitted: (_) => _submit(items),
+                  style: Theme.of(context).textTheme.bodyLarge,
+                  decoration: InputDecoration(
+                    hintText: s.homeSearchHint,
+                    filled: true,
+                    fillColor: FudiPalette.of(context).surface,
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 18,
+                    ),
+                    prefixIcon: const Icon(LucideIcons.search, size: 20),
+                    suffixIcon: FudiIconButton(
+                      icon: LucideIcons.x,
+                      label: s.dsClearSearch,
+                      onPressed: _controller.text.isEmpty
+                          ? null
+                          : _controller.clear,
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(28),
+                      borderSide: BorderSide.none,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(28),
+                      borderSide: BorderSide.none,
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(28),
+                      borderSide: BorderSide(
+                        color: FudiPalette.of(context).accent,
+                        width: 2,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
           ),

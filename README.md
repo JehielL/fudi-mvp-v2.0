@@ -4,12 +4,32 @@ Migracion Angular a Flutter, MIG-000 a MIG-003A y MIG-010 funcional completadas.
 El producto dispone de shell responsive, Home con datos reales y tres destinos
 de shell todavia provisionales. Home consulta APIs publicas del backend configurado;
 el catalogo interno del Design System permanece separado y sin peticiones API.
-La paridad visual/interactiva de navbar y Home NO esta completada.
+La implementacion publica del navbar esta validada tecnicamente, pendiente de
+revision fina global; MIG-010A cierra su criterio de fase sin P0/P1 conocidos,
+con P2/P3 explicitos y sin certificar paridad fina completa de cada region.
 MIG-003B A-C: [contrato baseline CLOSED](docs/contracts/MIG-003B-NAVBAR-VISUAL-CONTRACT.md),
-CONTRACT_READY; implementacion NOT_STARTED, revision de producto pendiente.
+baseline aprobada y PD-01..05 resueltas: [autorizacion D-G](docs/mig003b/PRODUCT-REVIEW.md).
+MIG-003B D-G: TECHNICALLY_VALIDATED / PENDING_PRODUCT_REVIEW, no DONE.
+[Informe y desviaciones](docs/mig003b/IMPLEMENTATION.md).
 Secuencia vigente: MIG-003B -> MIG-010A -> MIG-011 (gated).
 
+## Archivos Locales Y Git
+
+`.agents/` (incluida ui-ux-pro-max), `.hallmark/`, node_modules, caches,
+builds/reportes Android, logs, `.env*` y outputs PNG/JSON de QA son locales.
+Se ignoran en Git; ejemplos `.env.example`/`.env.template` si se pueden compartir.
+La skill sigue instalada, no se elimina ni es dependencia de Flutter.
+Origen local: nextlevelbuilder/ui-ux-pro-max-skill,
+revision09170eec67eefd46a7ae85de61b40c194020f997; politica FUDI en AGENTS.md.
+Las capturas previas versionadas se retiran del indice, no del disco.
+Los README de evidencia, contratos, scripts, tests, assets originales,
+pubspec.lock y serializers API generados SI pertenecen al repo.
+
 ## Requisitos
+
+Preview de revision del navbar: `http://localhost:5182/`, con fixtures publicos
+locales vacios y sin identidad simulada. No reemplaza los servidores5173/5174.
+Reproduccion y [comparativas Angular/Flutter](docs/mig003b/implementation-evidence/README.md).
 
 Validado con Flutter stable 3.47.6 y Dart 3.13.5. Instalar dependencias antes
 de ejecutar o analizar un checkout nuevo:
@@ -29,10 +49,14 @@ mediante constantes de compilacion, no mediante variables del proceso en runtime
 | Define | Valores | Predeterminado |
 | --- | --- | --- |
 | `APP_ENV` | `development`, `production` | `development` |
-| `API_BASE_URL` | Origen HTTP(S) absoluto | Desarrollo: `http://localhost:8080`; produccion: `https://api.fudi.es` |
+| `API_BASE_URL` | Origen HTTP(S) local absoluto | `http://localhost:8080` en ambos modos |
 
 La URL base no incluye `/api/v1`: el backend tambien usa `/api/private/v1`.
-No admite credenciales, rutas, query ni fragmento. Produccion exige HTTPS.
+No admite credenciales, rutas, query ni fragmento. Por decision del usuario,
+el backend no esta ni estara desplegado: los servicios usan solo localhost,
+loopback o una IP LAN privada (incluido10.0.2.2 para emulador). Se rechazan
+origenes API remotos incluso HTTPS, en ambos modos. `production` describe
+el modo de la app, no un backend desplegado; HTTP local esta permitido.
 Un valor invalido falla antes de montar la aplicacion. Los defines son publicos
 en el binario: no contienen secretos. Cambiar los defines requiere recompilar.
 
@@ -47,7 +71,7 @@ backend. No se utiliza el proxy de Angular. Si el puerto esta ocupado, usar
 otro origen que ya este permitido por el backend, o gestionar CORS en una
 tarea posterior. `127.0.0.1:5173` no figura en su lista actual.
 
-Para comprobar el cliente web con el origen que usa Angular en produccion:
+Para comprobar el cliente web en modo production contra el mismo backend local:
 
 ```powershell
 flutter run -d chrome --web-hostname=localhost --web-port=5173 --dart-define=APP_ENV=production
@@ -64,7 +88,8 @@ flutter run -d <device-id> --dart-define=APP_ENV=development --dart-define=API_B
 `localhost` en el emulador se refiere al propio emulador. En un dispositivo
 fisico usar el origen LAN del backend accesible desde ese dispositivo.
 HTTP sin cifrar solo esta habilitado en el manifiesto Android de debug.
-Los builds de release deben utilizar un backend HTTPS.
+El release Android sigue sujeto a su politica de cleartext, que no se cambia
+en MIG011 A-C; usar debug para HTTP local. No se inventa un backend desplegado.
 
 ### Produccion
 
@@ -99,15 +124,16 @@ Un enlace desconocido permite volver al inicio sin exponer su URI. No existen
 redirecciones de autenticacion ni aliases heredados. Detalles, Auth, Business y
 modales futuros podran vivir fuera del shell. Decisiones y limites: `docs/MIG-003.md`.
 
-Consumer mantiene dos patrones: barra inferior en mobile y tablet vertical;
-cabecera superior en desktop y tablet horizontal con espacio suficiente. Desde
-768 px se evalua geometria y ajuste real de las etiquetas a la escala activa;
-desde 1200 px se prefiere cabecera si cabe. El ancho util descuenta safe areas.
-La marca y los enlaces se limitan a `FudiSizing.contentWidth`; el cuerpo ocupa
-todo el ancho disponible y cada feature futura decidira su composicion.
-No hay rail/sidebar consumer; se conservan como primitivas para Business/Admin.
-Con texto grande la barra pasa a dos filas. La navegacion respeta safe areas,
-targets de 48 px, foco, Tab/Enter y labels ARB ES/EN. El teclado oculta la barra.
+Consumer conserva el navbar rico Angular mediante una capa Flutter propia:
+header mobile y barra inferior conviven bajo 992 px; de 992 a 1199 px se usa
+header compacto sin barra inferior; desde 1200 px aparece el header desktop
+cuando el texto real cabe. No hay rail/sidebar consumer. Logo original,
+Archivo, desplegables Explorar/Nosotros y selector ES/PA/WORLDWIDE compartido
+con Home; el header mantiene su identidad oscura en ambos temas.
+Los destinos publicos existentes usan bridges; Auth/roles ausentes permanecen
+ocultos. Safe areas, targets de 48 px, teclado, ES/EN, texto 200% y reduced-motion
+se verifican sin modificar la composicion de Home.
+Detalle y desviaciones: [implementacion MIG-003B](docs/mig003b/IMPLEMENTATION.md).
 La correccion de presentacion esta documentada en `docs/MIG-003A.md`.
 
 Angular es baseline funcional, visual, espacial, interactiva y de motion.
@@ -241,7 +267,10 @@ El build de produccion no debe incluir el define que habilita el catalogo.
 
 Los informes completos estan en `docs/MIG-000.md`, `docs/MIG-001.md`,
 `docs/MIG-002.md`, `docs/MIG-003.md`, `docs/MIG-003A.md` y `docs/MIG-010.md`.
-MIG-010 esta DONE funcional, con paridad visual parcial. Los briefs de las pasadas
-pendientes son [MIG-003B](docs/MIG-003B.md) y [MIG-010A](docs/MIG-010A.md).
+MIG-010 esta DONE funcional;010A DONE de fase con P2/P3 visibles, no aprobacion
+global de producto. Informes: [MIG-003B](docs/MIG-003B.md) y
+[MIG-010A](docs/MIG-010A.md). [MIG-011 A-C](docs/MIG-011.md) esta COMPLETE con
+contrato CLOSED documental e implementacion NOT_STARTED.
 La [plantilla de Visual Contract](docs/templates/VISUAL-CONTRACT.md) es obligatoria
-para las nuevas fases. MIG-011 a MIG-015 quedan gated; no se inician automaticamente.
+para las nuevas fases. MIG-011 D-G y MIG-012 a MIG-015 quedan gated;
+no se inician automaticamente ni por el cierre documental.

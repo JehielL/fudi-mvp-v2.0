@@ -54,3 +54,28 @@ app.*.map.json
 /packages/fudi_api/.dart_tool/
 /packages/fudi_api/build/
 /packages/fudi_api/.openapi-generator/
+
+# Local agent tooling, not application source.
+/.agents/
+/.hallmark/
+**/__pycache__/
+node_modules/
+
+# Local credentials; share only explicit examples.
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Native build reports and caches.
+/android/build/
+
+# Reproducible visual QA outputs stay local. Keep human-readable reports.
+/docs/mig003b/evidence/*.png
+/docs/mig003b/evidence/*.json
+/docs/mig003b/implementation-evidence/*
+!/docs/mig003b/implementation-evidence/README.md
+/docs/mig010a/evidence/*
+!/docs/mig010a/evidence/README.md
+/docs/mig011/evidence/*
+!/docs/mig011/evidence/README.md

@@ -8,10 +8,10 @@ void main() {
     expect(config.apiBaseUrl, Uri.parse('http://localhost:8080/'));
   });
 
-  test('production uses the origin used by Angular', () {
+  test('production also defaults to the backend local origin', () {
     final config = AppConfig.fromValues(environment: 'production');
     expect(config.environment, AppEnvironment.production);
-    expect(config.apiBaseUrl, Uri.parse('https://api.fudi.es/'));
+    expect(config.apiBaseUrl, Uri.parse('http://localhost:8080/'));
   });
 
   test(
@@ -52,7 +52,7 @@ void main() {
     });
   }
 
-  test('production rejects cleartext HTTP', () {
+  test('production rejects a remote cleartext origin', () {
     expect(
       () => AppConfig.fromValues(
         environment: 'production',
@@ -61,4 +61,42 @@ void main() {
       throwsFormatException,
     );
   });
+
+  for (final environment in ['development', 'production']) {
+    test('$environment rejects remote API origins, including HTTPS', () {
+      for (final origin in ['https://api.fudi.es', 'http://8.8.8.8:8080']) {
+        expect(
+          () => AppConfig.fromValues(
+            environment: environment,
+            apiBaseUrl: origin,
+          ),
+          throwsFormatException,
+        );
+      }
+    });
+    test('$environment supports host aliases for local devices', () {
+      for (final origin in [
+        'http://127.0.0.1:8080',
+        'http://[::1]:8080',
+        'http://10.0.2.2:8080',
+        'http://192.168.1.20:8080',
+        'http://172.16.0.2:8080',
+      ]) {
+        expect(
+          AppConfig.fromValues(
+            environment: environment,
+            apiBaseUrl: origin,
+          ).apiBaseUrl,
+          Uri.parse('$origin/'),
+        );
+      }
+      expect(
+        () => AppConfig.fromValues(
+          environment: environment,
+          apiBaseUrl: 'http://172.32.0.2:8080',
+        ),
+        throwsFormatException,
+      );
+    });
+  }
 }

@@ -56,12 +56,7 @@ void main() {
       await scoped
           .read(generatedApiClientProvider)
           .execute((api) => api.getRestaurantsApi().apiV1RestaurantsGet());
-      expect(
-        transport.request!.uri.origin,
-        environment == 'production'
-            ? 'https://api.fudi.es'
-            : 'http://localhost:8080',
-      );
+      expect(transport.request!.uri.origin, 'http://localhost:8080');
     });
   }
 

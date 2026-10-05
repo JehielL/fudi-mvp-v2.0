@@ -1,6 +1,16 @@
 # MIG-003B: Rich Navbar Experience Parity
 
-Estado: **CONTRACT_READY, no DONE**. Phase A-C finalizada 03/10/2026.
+Estado vigente: **D-G TECHNICALLY_VALIDATED / PENDING_PRODUCT_REVIEW, no DONE**.
+Phase A-C finalizada y aprobada el03/10/2026. PD-01..05 RESOLVED.
+[Decision de producto](mig003b/PRODUCT-REVIEW.md).
+
+[Implementacion y registro final D-G](mig003b/IMPLEMENTATION.md).
+[Comparacion Angular/Flutter](mig003b/implementation-evidence/README.md).
+303 pruebas, analyze limpio, builds web preview/production correctos; evidencia
+local publica sin Auth/roles simulados. La revision del resultado sigue pendiente.
+
+Lo siguiente conserva el informe historico de A-C. Sus menciones a autorizacion
+pendiente y codigo intacto describen aquella entrega, no el estado actual.
 
 | Dimension | Estado |
 |---|---|

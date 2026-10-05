@@ -1,16 +1,9 @@
 import 'package:fudi_api/fudi_api.dart';
 
-enum HomeMarket {
-  es,
-  pa,
-  worldwide;
+import '../../../core/market/public_market.dart';
 
-  String? get country => switch (this) {
-    es => 'ES',
-    pa => 'PA',
-    worldwide => null,
-  };
-}
+// Compatibility type for Home's repository API; ownership is now global.
+typedef HomeMarket = PublicMarket;
 
 class HomeRestaurant {
   const HomeRestaurant({

@@ -5,9 +5,15 @@ import '../../../app/l10n/generated/app_localizations.dart';
 import '../../../design_system/design_system.dart';
 
 class HomeImage extends StatelessWidget {
-  const HomeImage({super.key, required this.uri, required this.label});
+  const HomeImage({
+    super.key,
+    required this.uri,
+    required this.label,
+    this.fill = false,
+  });
   final Uri? uri;
   final String label;
+  final bool fill;
 
   @override
   Widget build(BuildContext context) {
@@ -16,31 +22,29 @@ class HomeImage extends StatelessWidget {
       label: AppLocalizations.of(context).homeImageMissing,
       child: ColoredBox(
         color: FudiPalette.of(context).surfaceMuted,
-        child: Center(
-          child: ExcludeSemantics(
-            child: Icon(
-              LucideIcons.imageOff,
-              size: 32,
-              color: FudiPalette.of(context).textMuted,
-            ),
-          ),
-        ),
+        child: fill
+            ? null
+            : Center(
+                child: ExcludeSemantics(
+                  child: Icon(
+                    LucideIcons.imageOff,
+                    size: 32,
+                    color: FudiPalette.of(context).textMuted,
+                  ),
+                ),
+              ),
       ),
     );
-    return AspectRatio(
-      aspectRatio: 16 / 10,
-      child: uri == null
-          ? missing()
-          : Image.network(
-              uri.toString(),
-              fit: BoxFit.cover,
-              semanticLabel: label,
-              errorBuilder: (_, error, stack) => missing(),
-              frameBuilder: (context, child, frame, sync) =>
-                  frame != null || sync
-                  ? child
-                  : const FudiSkeleton(height: 200),
-            ),
-    );
+    final image = uri == null
+        ? missing()
+        : Image.network(
+            uri.toString(),
+            fit: BoxFit.cover,
+            semanticLabel: label,
+            errorBuilder: (_, error, stack) => missing(),
+            frameBuilder: (context, child, frame, sync) =>
+                frame != null || sync ? child : const FudiSkeleton(height: 200),
+          );
+    return fill ? image : AspectRatio(aspectRatio: 16 / 10, child: image);
   }
 }

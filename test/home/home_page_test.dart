@@ -1,6 +1,9 @@
 import 'dart:async';
+import 'dart:io';
+import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -42,8 +45,17 @@ Future<ProviderContainer> mountHome(
   List<Uri>? links,
   Future<List<HomeRestaurant>> Function(String)? suggestions,
   Future<bool> Function(Uri)? opener,
+  bool reduced = true,
 }) async {
-  await tester.binding.setSurfaceSize(Size(width, 900));
+  final viewport = Size(width, switch (width) {
+    320 => 800,
+    390 => 844,
+    768 => 1024,
+    1024 => 768,
+    1200 => 800,
+    _ => 900,
+  });
+  await tester.binding.setSurfaceSize(viewport);
   addTearDown(() => tester.binding.setSurfaceSize(null));
   final container = ProviderContainer(
     overrides: [
@@ -73,21 +85,26 @@ Future<ProviderContainer> mountHome(
   await tester.pumpWidget(
     UncontrolledProviderScope(
       container: container,
-      child: MaterialApp(
-        theme: brightness == Brightness.light
-            ? FudiTheme.light
-            : FudiTheme.dark,
-        locale: Locale(locale),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        builder: (context, child) => MediaQuery(
-          data: MediaQuery.of(context).copyWith(
-            textScaler: TextScaler.linear(scale),
-            disableAnimations: true,
+      child: RepaintBoundary(
+        key: const Key('home-proof'),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: brightness == Brightness.light
+              ? FudiTheme.light
+              : FudiTheme.dark,
+          locale: Locale(locale),
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          builder: (context, child) => MediaQuery(
+            data: MediaQuery.of(context).copyWith(
+              size: viewport,
+              textScaler: TextScaler.linear(scale),
+              disableAnimations: reduced,
+            ),
+            child: child!,
           ),
-          child: child!,
+          home: const Scaffold(body: HomePage()),
         ),
-        home: const Scaffold(body: HomePage()),
       ),
     ),
   );
@@ -105,9 +122,13 @@ void main() {
     await (FontLoader(FudiTypography.displayFamily)
           ..addFont(rootBundle.load('assets/fonts/archivo-condensed-600.ttf')))
         .load();
+    await (FontLoader('packages/lucide_flutter/LucideIcons')..addFont(
+          rootBundle.load('packages/lucide_flutter/assets/lucide.ttf'),
+        ))
+        .load();
   });
 
-  for (final width in [320.0, 390.0, 768.0, 1200.0, 1440.0]) {
+  for (final width in [320.0, 390.0, 768.0, 1024.0, 1200.0, 1440.0]) {
     for (final locale in ['es', 'en']) {
       for (final brightness in [Brightness.light, Brightness.dark]) {
         for (final scale in [1.0, 2.0]) {
@@ -127,7 +148,11 @@ void main() {
             expect(find.text('unknownDefaultOpenApi'), findsNothing);
             expect(find.text('FUTURE'), findsNothing);
             expect(
-              find.text(locale == 'es' ? 'Reserva tu mesa' : 'Book your table'),
+              find.text(
+                locale == 'es'
+                    ? 'Tu pr\u00f3xima mesa, en segundos'
+                    : 'Your next table, in seconds',
+              ),
               findsOneWidget,
             );
             expect(tester.takeException(), isNull);
@@ -145,6 +170,93 @@ void main() {
       }
     }
   }
+
+  testWidgets('Editorial mobile 4:3 y CTA despues de las fotos', (
+    tester,
+  ) async {
+    await mountHome(
+      tester,
+      articles: () => Future.value([selection, selection, selection]),
+    );
+    final cards = find.byType(HomeArticleCard);
+    final size = tester.getSize(cards.first);
+    expect(size.height, closeTo(size.width * .75, 1));
+    expect(
+      tester.getTopLeft(find.text('Ver selecciones')).dy,
+      greaterThan(tester.getBottomLeft(cards.last).dy),
+    );
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('Featured unico no se estira a toda la grid desktop', (
+    tester,
+  ) async {
+    await mountHome(tester, width: 1440);
+    expect(tester.getSize(find.byType(HomeArticleCard)).width, 544);
+    final restaurant = tester.getSize(find.byType(HomeRestaurantCard));
+    expect(restaurant.width, lessThan(400));
+  });
+
+  testWidgets('Hero conserva medidas de titular y tracks de accesos mobile', (
+    tester,
+  ) async {
+    await mountHome(tester);
+    final title = tester.getSize(
+      find.text('Tu pr\u00f3xima mesa, en segundos'),
+    );
+    expect(title.width, lessThanOrEqualTo(270));
+    expect(title.height, greaterThan(120));
+    final left = tester.getCenter(find.text('RESTAURANTES'));
+    final right = tester.getCenter(find.text('M\u00c1S VALORADOS'));
+    expect(right.dx - left.dx, closeTo(147.4, 1));
+    expect(left.dy, closeTo(right.dy, 1));
+  });
+
+  testWidgets(
+    'Promos conservan titular propio, metadata al pie y CTA centrado',
+    (tester) async {
+      await mountHome(tester);
+      final card = find.byType(HomeOfferCard);
+      Finder text(String label) =>
+          find.descendant(of: card, matching: find.text(label));
+      expect(tester.widget<Text>(text(row.name)).style!.fontSize, 48);
+      expect(
+        tester.getBottomLeft(text(row.name)).dy,
+        lessThan(tester.getTopLeft(text('1 promoci\u00f3n')).dy),
+      );
+      expect(
+        tester.getCenter(text('Ver promociones')).dx,
+        closeTo(tester.getCenter(card).dx - 15, 1),
+      );
+      expect(text('Oferta fixture'), findsNothing);
+      final semantics = find.descendant(
+        of: card,
+        matching: find.byWidgetPredicate(
+          (widget) =>
+              widget is Semantics &&
+              widget.properties.value == 'Oferta fixture',
+        ),
+      );
+      expect(semantics, findsOneWidget);
+      expect(tester.takeException(), isNull);
+    },
+  );
+
+  testWidgets('Negocio y pasos mantienen su orden relativo original', (
+    tester,
+  ) async {
+    await mountHome(tester);
+    expect(
+      tester
+          .getTopLeft(
+            find.text('Tu restaurante tambi\u00e9n tiene sitio aqu\u00ed'),
+          )
+          .dy,
+      lessThan(
+        tester.getTopLeft(find.text('As\u00ed de f\u00e1cil es reservar')).dy,
+      ),
+    );
+  });
 
   testWidgets('Loading por fuente usa skeletons sin fabricar cards', (
     tester,
@@ -244,7 +356,7 @@ void main() {
   ) async {
     final links = <Uri>[];
     await mountHome(tester, links: links);
-    await tester.tap(find.text('M\u00e1s valorados'));
+    await tester.tap(find.text('M\u00c1S VALORADOS'));
     await tester.pumpAndSettle();
     expect(links.last.path, '/ranking');
     await tester.ensureVisible(find.byType(HomeRestaurantCard));
@@ -296,23 +408,22 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(ListTile), findsNothing);
     await tester.enterText(find.byType(TextFormField), 'a' * 130);
-    final search = tester.widget<FudiSearchField>(
+    final search = tester.widget<TextFormField>(
       find.descendant(
         of: find.byType(HomeSearch),
-        matching: find.byType(FudiSearchField),
+        matching: find.byType(TextFormField),
       ),
     );
     expect(search.controller!.text.length, 120);
   });
 
-  testWidgets('Mercado no cambia por EN; selector mundial explicito', (
+  testWidgets('Mercado global no cambia por EN; hero no duplica selector', (
     tester,
   ) async {
     final container = await mountHome(tester, locale: 'en');
     expect(container.read(homeMarketProvider), HomeMarket.es);
-    await tester.tap(find.byKey(const Key('home-market')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Worldwide').last);
+    expect(find.byKey(const Key('home-market')), findsNothing);
+    container.read(homeMarketProvider.notifier).select(HomeMarket.worldwide);
     await tester.pumpAndSettle();
     expect(container.read(homeMarketProvider), HomeMarket.worldwide);
   });
@@ -325,9 +436,9 @@ void main() {
       await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
       await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
       final headings = [
-        'Reserva tu mesa',
+        'Tu pr\u00f3xima mesa, en segundos',
         'Restaurantes para explorar',
-        'Selecciones F\u00dcDI',
+        'Selecciones',
         'Tu pr\u00f3xima experiencia gastron\u00f3mica te espera',
         'Promociones especiales',
       ];
@@ -396,7 +507,7 @@ void main() {
         tester.getTopLeft(find.text('Restaurantes para explorar')),
         before,
       );
-      await tester.tap(find.text('Reserva tu mesa'));
+      await tester.tap(find.text('Tu pr\u00f3xima mesa, en segundos'));
       await tester.pumpAndSettle();
       expect(find.byType(ListTile), findsNothing);
       await tester.enterText(find.byType(TextFormField), 'fi');
@@ -462,6 +573,162 @@ void main() {
     expect(find.byType(HomeOfferCard), findsNWidgets(3));
   });
 
+  testWidgets('Promo fade300+hold50 conserva scroll y no acepta reentrada', (
+    tester,
+  ) async {
+    await mountHome(
+      tester,
+      reduced: false,
+      offers: () async => List.generate(
+        4,
+        (i) => HomeOffer(
+          restaurant: HomeRestaurant(id: 30 + i, name: 'Promo $i'),
+          titles: ['Oferta $i'],
+        ),
+      ),
+    );
+    await tester.ensureVisible(find.byTooltip('P\u00e1gina siguiente'));
+    await tester.pumpAndSettle();
+    final scroll = tester
+        .state<ScrollableState>(find.byType(Scrollable).first)
+        .position;
+    final before = scroll.pixels;
+    await tester.tap(find.byTooltip('P\u00e1gina siguiente'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 299));
+    expect(find.byType(HomeOfferCard), findsNWidgets(3));
+    final next = tester.widget<FudiIconButton>(
+      find.byWidgetPredicate(
+        (w) => w is FudiIconButton && w.label == 'P\u00e1gina siguiente',
+      ),
+    );
+    expect(next.onPressed, isNull);
+    await tester.pump(const Duration(milliseconds: 2));
+    await tester.pump();
+    expect(find.byType(HomeOfferCard), findsOneWidget);
+    expect(scroll.pixels, before);
+    await tester.pump(const Duration(milliseconds: 350));
+    await tester.pumpAndSettle();
+    expect(find.text('2 de 2'), findsOneWidget);
+    await tester.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('Footer conserva legal publico y no simula auth', (tester) async {
+    final links = <Uri>[];
+    await mountHome(tester, links: links);
+    await tester.ensureVisible(find.text('Privacidad'));
+    await tester.tap(find.text('Privacidad'));
+    await tester.pumpAndSettle();
+    expect(links.single.path, '/legal/privacy');
+    expect(find.text('Consentimientos'), findsNothing);
+    expect(find.text('Setup'), findsNothing);
+  });
+
+  testWidgets(
+    'Tiles y foto cards exponen activacion real al lector de pantalla',
+    (tester) async {
+      final semantics = tester.ensureSemantics();
+      final links = <Uri>[];
+      await mountHome(tester, links: links);
+      final tile = find.byWidgetPredicate(
+        (w) =>
+            w is Semantics &&
+            w.properties.button == true &&
+            w.properties.label == 'M\u00e1s valorados',
+      );
+      expect(
+        tester
+            .getSemantics(tile)
+            .getSemanticsData()
+            .hasAction(ui.SemanticsAction.tap),
+        isTrue,
+      );
+      tester.widget<Semantics>(tile).properties.onTap!();
+      await tester.pumpAndSettle();
+      expect(links.last.path, '/ranking');
+      await tester.ensureVisible(find.byType(HomeRestaurantCard));
+      final card = find.byWidgetPredicate(
+        (w) =>
+            w is Semantics &&
+            w.properties.button == true &&
+            w.properties.label == 'Ver restaurante: ${row.name}',
+      );
+      expect(
+        tester
+            .getSemantics(card)
+            .getSemanticsData()
+            .hasAction(ui.SemanticsAction.tap),
+        isTrue,
+      );
+      tester.widget<Semantics>(card).properties.onTap!();
+      await tester.pumpAndSettle();
+      expect(links.last.path, '/restaurant/7/detail');
+      semantics.dispose();
+    },
+  );
+
+  if (const bool.fromEnvironment('CAPTURE_HOME_EVIDENCE')) {
+    for (final locale in ['es', 'en']) {
+      testWidgets('Evidencia nativa 390 a200% $locale', (tester) async {
+        await mountHome(tester, locale: locale, width: 390, scale: 2);
+        Future<void> capture(String region) async {
+          await tester.pumpAndSettle();
+          await tester.runAsync(() async {
+            final boundary = tester.renderObject<RenderRepaintBoundary>(
+              find.byKey(const Key('home-proof')),
+            );
+            final image = await boundary.toImage(pixelRatio: 1);
+            final bytes = await image.toByteData(
+              format: ui.ImageByteFormat.png,
+            );
+            final file = File(
+              'docs/mig010a/evidence/native/390-$locale-200-$region.png',
+            );
+            await file.parent.create(recursive: true);
+            await file.writeAsBytes(bytes!.buffer.asUint8List());
+            image.dispose();
+          });
+        }
+
+        await capture('top');
+        await tester.ensureVisible(find.byType(HomeRestaurantCard));
+        await capture('restaurant');
+        await tester.ensureVisible(
+          find.text(locale == 'es' ? 'Privacidad' : 'Privacy'),
+        );
+        await capture('footer');
+        expect(tester.takeException(), isNull);
+      });
+    }
+  }
+
+  for (final locale in ['es', 'en']) {
+    testWidgets(
+      'CTA editorial conserva palabras completas a320 y200% $locale',
+      (tester) async {
+        await mountHome(tester, width: 320, locale: locale, scale: 2);
+        await tester.ensureVisible(find.byType(HomeArticleCard));
+        final s = AppLocalizations.of(tester.element(find.byType(HomePage)));
+        final target = find.text(s.homeArticleAction);
+        final text = tester.widget<Text>(target);
+        final paragraph = tester.renderObject<RenderParagraph>(target);
+        for (final word in s.homeArticleAction.split(' ')) {
+          final painter = TextPainter(
+            text: TextSpan(text: word, style: text.style),
+            textDirection: TextDirection.ltr,
+            textScaler: const TextScaler.linear(2),
+          )..layout();
+          expect(
+            painter.width,
+            lessThanOrEqualTo(paragraph.constraints.maxWidth),
+            reason: word,
+          );
+          painter.dispose();
+        }
+      },
+    );
+  }
+
   for (final throwsError in [false, true]) {
     testWidgets('Fallo al abrir destino comunica error: $throwsError', (
       tester,
@@ -475,7 +742,7 @@ void main() {
           return false;
         },
       );
-      await tester.tap(find.text('M\u00e1s valorados'));
+      await tester.tap(find.text('M\u00c1S VALORADOS'));
       await tester.pumpAndSettle();
       expect(find.text('No se pudo abrir el destino.'), findsOneWidget);
       expect(find.textContaining('private'), findsNothing);
@@ -493,7 +760,7 @@ void main() {
       for (final title in [
         s.homeTitle,
         s.homeRestaurants,
-        s.homeSelections,
+        s.homeSelectionsHeading,
         s.homeStoryTitle,
         s.homeOffers,
         s.homeSteps,
@@ -571,9 +838,7 @@ void main() {
     'Entrada accesible/programatica dispara sugerencias sin onChanged',
     (tester) async {
       await mountHome(tester);
-      final search = tester.widget<FudiSearchField>(
-        find.byType(FudiSearchField),
-      );
+      final search = tester.widget<TextFormField>(find.byType(TextFormField));
       search.controller!.text = 'fixture';
       await tester.pump(const Duration(milliseconds: 221));
       await tester.pumpAndSettle();

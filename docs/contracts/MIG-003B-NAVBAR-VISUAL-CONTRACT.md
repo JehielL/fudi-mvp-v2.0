@@ -1,10 +1,13 @@
 # Visual Contract: MIG-003B Navbar
 
 Estado: **CLOSED (baseline documental A-C)**, 03/10/2026.
-Revision de producto y autorizacion D-G: **PENDING**. Implementation NOT_STARTED.
-Paridad: PENDING_IMPLEMENTATION. MIG-003B NO DONE.
+Revision de producto de baseline: **APPROVED** el03/10/2026; PD-01..05 RESOLVED.
+D-G TECHNICALLY_VALIDATED; revision del resultado PENDING_PRODUCT_REVIEW.
+La [decision de producto](../mig003b/PRODUCT-REVIEW.md) resuelve las filas NAV-25..29.
+Paridad publica implementada, con adaptaciones/desviaciones registradas en
+[IMPLEMENTATION.md](../mig003b/IMPLEMENTATION.md). MIG-003B NO DONE.
 
-Cerrar el inventario de baseline no decide PD-01..05 ni concede exclusiones de
+Historico A-C: cerrar el inventario de baseline no decidia PD-01..05 ni concedia exclusiones de
 dependencias. Estas filas quedan bloqueadas individualmente. No comenzar codigo
 antes de revision del usuario y resolucion/acuerdo del alcance afectado.
 No hay ninguna fila MATCHED ni datos fake en runtime de producto.
@@ -56,11 +59,11 @@ D=DEPENDENCIES; E=evidence/measurements.json. Fuentes N-*/S/B en SOURCES.
 | NAV-22 | Tipografia aprobada | AngularPlusJakarta, medidasporjerarquia M | Archivo/ArchivoCondensed ya aprobadas; medirmetricas/boxes en composicion, no tokenhomogeneo | Solo familia y ajustes necesarios documentados, tracking0; no reinstalar fuente rechazada | AGENTS,VISUAL-PARITY,MIG-002; usuario | APPROVED_CHANGE |
 | NAV-23 | Assets | Logo exacto,3flagSVG,editorial1672x941,Lucide,avatarfallback | Originales y Lucide equivalentes; mantener originalfoto ycropcentercover+overlay | No generarassets; faltantes incorporables solo en implementacion autorizada | assets.json,IA,UI | MATCH_REQUIRED |
 | NAV-24 | Scroll/routing | Fixed, Y>20compacta; bottom hide24/up12 despues96; NavigationEndclose/focusmain | Misma interaccion, preservar stacks/deeplinks/restoration de003A | Mecanismos nativos; limpiezaresizeNAV-18; no AppBarstandard ni resetbranches | I,T,S,B,F-Shell | MATCH_REQUIRED |
-| NAV-25 | Desktop/tablet limites | Angularheader1200,bottom992; actualFlutter1024landscapeprimarysimple | Pendiente eleccion responsive/franja992-1199 y tablets, labelsrol | Solo decision explicitaPD-01 | M,D,pares,F-Shell | PRODUCT_DECISION_REQUIRED |
-| NAV-26 | Tema dark futuro | Angularfijo enlight/darkemulado; Flutterdualpalette | Pendiente fijo vsvariante aprobada, no skin inferida | Solo PD-02 | M,D,E | PRODUCT_DECISION_REQUIRED |
-| NAV-27 | Transitorio protegido | Feature/rolesFlutterausentes, guardslegacy/sesionno compartida | Pendiente poritem visiblebridge/disabled/hidden, retorno/seguridad | Solo PD-03, no permiso porfixture o silencio | D,IA,A,G | PRODUCT_DECISION_REQUIRED |
-| NAV-28 | Cross-app mercado | Fluttermemory vsAngularstorage/preferencia; countryno garantiza sincronizar | Pendiente alcance bridge/globalcontexto | Solo PD-04; no persistenciaAuthprematura | D,M,F-Links | PRODUCT_DECISION_REQUIRED |
-| NAV-29 | Entidad Favorites | MenuList carga menus-liked; MIG-023 generico | Pendiente confirmar alcance menus vsrestaurantes | Solo PD-05, routeexistente nunca inventada | D,IA,ML,MS | PRODUCT_DECISION_REQUIRED |
+| NAV-25 | Desktop/tablet limites | Angularheader1200,bottom992 | 320-991 top rico + bottom;992-1199 top compacto;desde1200 completo si cabe | PD-01 resuelta; sin sidebar/truncado y con ajuste real de texto | PRODUCT-REVIEW, M | PLATFORM_ADAPTATION / APPROVED |
+| NAV-26 | Tema | Angular oscuro/translucido fijo | Header oscuro fijo en light/dark, familia original de dropdowns | PD-02 resuelta; resto de app conserva tema propio | PRODUCT-REVIEW, M | APPROVED_CHANGE |
+| NAV-27 | Transitorio | Auth/roles aun ausentes | Native funcional visible;publico seguro bridge;Auth/Business/Admin ocultos;placeholders prohibidos | PD-03 resuelta; no fixtures de identidad en runtime ni disabled cosmeticos | PRODUCT-REVIEW | APPROVED_CHANGE (APPROVED_TRANSITION_POLICY) |
+| NAV-28 | Mercado | Flutter memoria vsAngular preferencia propia | Contexto publico global ES/PA/WORLDWIDE compartido por navbar/Home | PD-04 resuelta; memoria sin storage/locale/geo;country solo donde soportado;no sincronizacion prometida | PRODUCT-REVIEW | APPROVED_CHANGE / APPROVED |
+| NAV-29 | Favorites | Angular menus-liked | MIG-023 Favorites / Liked Menus; no restaurant favorites | PD-05 significado RESOLVED; navbar oculto hastaMIG-020/023 | PRODUCT-REVIEW, ML,MS | DEPENDENCY_PENDING |
 
 ## Assets Clasificados
 
@@ -68,8 +71,8 @@ D=DEPENDENCIES; E=evidence/measurements.json. Fuentes N-*/S/B en SOURCES.
 |---|---|---|
 | Logo Angular y Flutter PNG | EXACT_ASSET_AVAILABLE, SHA4d774c5d... mismo1447x659 | Reusar, no regenerar ni tipografiar |
 | Lucide primary/items/CTA/caret | REPLACE_WITH_EQUIVALENT_ICON | lucide_flutter ya instalado; correspondencia House,Compass,Users,BriefcaseBusiness,Store,BookOpenText,Building2,LayoutDashboard,UserRoundCog,CirclePlus,CalendarCheck2,Heart,LogIn,LogOut,UserRound,UserRoundPlus,ChevronDown/Right,Sparkles; stroke absoluto1.9, bottomactivo2.2 |
-| ES/PA/WORLDWIDE SVG | MISSING_ASSET en Flutter, original existe Angular | Copiar originales al autorizar D-G; no banderaemoji ni assets nuevos generados |
-| recommendations-editorial-hero.png | MISSING_ASSET en Flutter | Original1672x941 SHA bec1c7f6...; no usar fotografia Home en panel |
+| ES/PA/WORLDWIDE SVG | EXACT_ASSET_AVAILABLE en D-G; MISSING_ASSET historico A-C | Copiados originales, SHA-256 identicos; no banderaemoji ni generacion |
+| recommendations-editorial-hero.png | EXACT_ASSET_AVAILABLE en D-G; MISSING_ASSET historico A-C | Original1672x941 copiado, SHA-256 identico; no fotografia Home en panel |
 | Avatarfallback, carettriangle, spark, hamburger | NO_ASSET_REQUIRED | LucideUserRound y dibujo simple nativo; no inventar marca en fallbacklogo |
 
 ## Gates
@@ -77,10 +80,13 @@ D=DEPENDENCIES; E=evidence/measurements.json. Fuentes N-*/S/B en SOURCES.
 - [x] A: Fuente actual y runtime actual medidos; builds historicas no usadas.
 - [x] B: IA, actores, geometria, responsive, estados y motion inventariados.
 - [x] C: Contrato baseline cerrado, decisiones abiertas identificadas y bloqueadas.
-- [ ] Usuario revisa contrato y autoriza expresamente alcance D-G.
-- [ ] Producto resuelve PD-01..05 del alcance afectado o acuerda exclusiones.
-- [ ] Implementacion Flutter y tests de paridad.
-- [ ] E/F/G y desviaciones dentro del alcance validadas, sin falsa etiqueta MATCHED.
+- [x] Usuario revisa contrato y autoriza expresamente alcance D-G:03/10/2026.
+- [x] Producto resuelve PD-01..05: PRODUCT-REVIEW.md.
+- [x] Implementacion Flutter y tests de paridad publica:303PASS, analyze limpio.
+- [x] E/F/G: pares, correcciones, responsive/motion y accesibilidad automatizada;
+  adaptaciones y P3 pendientes de producto transparentes en registro final.
+- [x] Builds web preview y production; assets originales verificados por SHA-256.
+- [ ] Revision de producto de la implementacion y aceptacion de desviaciones.
 
 MIG-010A BLOCKED por MIG-003B, MIG-011..015 GATED. Ningun gate posterior se abre
 por escribir documentos, capturar fixtures ni pasar analyze/tests del baseline.

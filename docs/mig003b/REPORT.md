@@ -1,5 +1,12 @@
 # Informe MIG-003B A-C
 
+Informe historico de la baseline. Producto la aprobo y autorizo D-G el03/10/2026;
+ver [decision vigente](PRODUCT-REVIEW.md). Los gates pendientes siguientes
+describen el momento de la entrega A-C, no desautorizan la implementacion actual.
+
+Entrega vigente D-G: [implementacion, verificacion y registro final](IMPLEMENTATION.md).
+TECHNICALLY_VALIDATED / PENDING_PRODUCT_REVIEW; overall NOT DONE.
+
 03/10/2026. Solo documentacion/medicion. No implementar navbar ni iniciar D-G.
 
 ## 1. Resumen Ejecutivo

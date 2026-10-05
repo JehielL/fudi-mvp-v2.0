@@ -10,6 +10,14 @@ import 'package:fudi/features/shell/presentation/shell_page.dart';
 import '../home/home_fixture.dart';
 
 void main() {
+  final testerBinding = TestWidgetsFlutterBinding.ensureInitialized();
+  setUp(() {
+    testerBinding.platformDispatcher.accessibilityFeaturesTestValue =
+        FakeAccessibilityFeatures(disableAnimations: true);
+    addTearDown(
+      testerBinding.platformDispatcher.clearAccessibilityFeaturesTestValue,
+    );
+  });
   testWidgets('app starts at the named shell route without creating Dio', (
     tester,
   ) async {
@@ -26,9 +34,17 @@ void main() {
     expect(router.namedLocation(shellRouteName), '/');
     expect(router.routeInformationProvider.value.uri.path, '/');
     expect(find.byType(ShellPage), findsOneWidget);
-    expect(find.byType(FudiLogo), findsOneWidget);
+    expect(
+      find.byWidgetPredicate(
+        (widget) =>
+            widget is Image &&
+            widget.image is AssetImage &&
+            (widget.image as AssetImage).assetName == FudiLogo.assetPath,
+      ),
+      findsNWidgets(3),
+    );
     expect(find.text('F\u00dcDI'), findsNothing);
-    expect(find.text('Reserva tu mesa'), findsOneWidget);
+    expect(find.text('Tu pr\u00f3xima mesa, en segundos'), findsOneWidget);
     expect(container.exists(dioProvider), isFalse);
     expect(tester.takeException(), isNull);
   });
@@ -40,7 +56,7 @@ void main() {
       ProviderScope(overrides: homeFixtureOverrides, child: const FudiApp()),
     );
     await tester.pumpAndSettle();
-    expect(find.text('Book your table'), findsOneWidget);
+    expect(find.text('Your next table, in seconds'), findsOneWidget);
   });
 
   testWidgets('unknown links show a localized error and return to root', (
@@ -65,7 +81,7 @@ void main() {
       container.read(appRouterProvider).routeInformationProvider.value.uri.path,
       '/',
     );
-    expect(find.text('Reserva tu mesa'), findsOneWidget);
+    expect(find.text('Tu pr\u00f3xima mesa, en segundos'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 

@@ -1,5 +1,10 @@
 # Visual Deviation Register
 
+Este registro conserva la baseline historica A-C. Las decisiones PD-01..05
+quedaron resueltas el 03/10/2026 en [PRODUCT-REVIEW.md](PRODUCT-REVIEW.md).
+El registro final D-G esta en [IMPLEMENTATION.md](IMPLEMENTATION.md#registro-final);
+no interpretar los pendientes historicos como decisiones de producto abiertas.
+
 MIG-003B A-C. Todas las acciones futuras siguen NOT_IMPLEMENTED. Ninguna fila
 significa MATCHED ni cierre de MIG-003B. Evidencia [pares](evidence/pairs.png),
 [rects Flutter](evidence/flutter-observations.json),

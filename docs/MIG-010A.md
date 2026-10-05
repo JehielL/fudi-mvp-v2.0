@@ -1,7 +1,14 @@
 # MIG-010A: Home Visual & Interaction Parity
 
-Estado: TODO / BLOCKED por MIG-003B. Contrato BORRADOR de arqueologia inicial,
-03/10/2026. No hay cambios UI ni nuevas capturas de paridad en esta pasada.
+Estado actual: DONE de fase segun el criterio explicito de la tarea actual,
+sin P0/P1 conocidos y con P2/P3 documentados; equivalencia fina PARTIAL,
+no aprobacion global de producto. MIG-003B tiene baseline aceptada. No se
+reabre su UI ni se inicia MIG-011. El borrador siguiente se conserva como
+historial inicial; contrato vigente y resultados:
+[contrato](contracts/MIG-010A-HOME-VISUAL-CONTRACT.md),
+[reporte de17 areas](mig010a/IMPLEMENTATION.md),
+[dos pasadas de critica](mig010a/CRITIQUE.md),
+[desviaciones](mig010a/DEVIATIONS.md), [evidencia](mig010a/evidence/README.md).
 
 ## Objetivo
 

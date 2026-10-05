@@ -42,6 +42,7 @@ flutter:
     - assets/brand/fudi-wordmark.png
     - assets/catalog/editorial-table.jpg
     - assets/home/story-banner.png
+    - assets/navigation/
     - assets/fonts/archivo-OFL.txt
     - assets/fonts/roboto-Apache-2.0.txt
   fonts:

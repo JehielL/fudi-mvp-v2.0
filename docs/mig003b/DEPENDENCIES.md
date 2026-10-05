@@ -1,5 +1,11 @@
 # Dependencias Y Decisiones De Producto
 
+Documento historico A-C. PD-01..05 estan RESOLVED desde el 03/10/2026:
+[resolucion aprobada](PRODUCT-REVIEW.md). Publicos via native/bridge;
+Auth/Business/Admin y Favoritos (liked menus) ocultos hasta sus dependencias.
+Mercado global Flutter en memoria, sin promesa de sincronizacion Angular.
+Estado implementado y limites: [IMPLEMENTATION.md](IMPLEMENTATION.md).
+
 La forma de un item y la disponibilidad de su feature son dimensiones distintas.
 El contrato puede registrar un estado visual conocido DEPENDENCY_PENDING sin
 fabricar una sesion ni certificar la feature. [IA completa](NAVBAR_INFORMATION_ARCHITECTURE.md).

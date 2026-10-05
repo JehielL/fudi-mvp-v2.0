@@ -30,12 +30,7 @@ final class AppConfig {
         'APP_ENV must be development or production.',
       ),
     };
-    final value = apiBaseUrl.isEmpty
-        ? switch (selectedEnvironment) {
-            AppEnvironment.development => 'http://localhost:8080',
-            AppEnvironment.production => 'https://api.fudi.es',
-          }
-        : apiBaseUrl;
+    final value = apiBaseUrl.isEmpty ? 'http://localhost:8080' : apiBaseUrl;
     final uri = Uri.tryParse(value);
     if (uri == null ||
         !uri.hasAuthority ||
@@ -50,9 +45,10 @@ final class AppConfig {
         'an API path, a query or a fragment.',
       );
     }
-    if (selectedEnvironment == AppEnvironment.production &&
-        uri.scheme != 'https') {
-      throw const FormatException('Production API_BASE_URL must use HTTPS.');
+    if (!_isLocalHost(uri.host)) {
+      throw const FormatException(
+        'API_BASE_URL must point to localhost, loopback or a private LAN IPv4 address.',
+      );
     }
     if (uri.port < 1 || uri.port > 65535) {
       throw const FormatException('API_BASE_URL must have a valid port.');
@@ -65,4 +61,17 @@ final class AppConfig {
 
   final AppEnvironment environment;
   final Uri apiBaseUrl;
+
+  static bool _isLocalHost(String host) {
+    if (host == 'localhost' || host == '::1' || host == '[::1]') return true;
+    final parts = host.split('.').map(int.tryParse).toList();
+    if (parts.length != 4 ||
+        parts.any((part) => part == null || part < 0 || part > 255)) {
+      return false;
+    }
+    return parts[0] == 127 ||
+        parts[0] == 10 ||
+        (parts[0] == 192 && parts[1] == 168) ||
+        (parts[0] == 172 && parts[1]! >= 16 && parts[1]! <= 31);
+  }
 }

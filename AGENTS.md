@@ -420,19 +420,30 @@ Hover desktop tiene equivalente pressed/tap en touch; reduced-motion debe
 respetarse y las adaptaciones de accesibilidad se documentan, no se ocultan.
 
 Secuencia vigente: MIG-003B -> MIG-010A -> MIG-011. MIG-010 esta DONE funcional,
-no DONE de paridad. MIG-011 a MIG-015 quedan gated; no iniciarlas automaticamente.
+no DONE de paridad. MIG-011 A-C autorizado y completado documentalmente;
+D-G y MIG-012 a MIG-015 quedan gated; no iniciarlas automaticamente.
 No deformar FudiTopNavigation para construir el navbar rico: usar una capa
 consumer sobre la infraestructura de MIG-003A. No fabricar auth, roles ni destinos.
 
 El shell tecnico consumer de MIG-003A alterna navegacion superior/inferior segun
 espacio; NO define el navbar final. Angular combina header rico y bottom bajo992,
 con header colapsado hasta1200. Ver contrato MIG-003B A-C y decisiones responsive
-pendientes; no eliminar una superficie ni sus acciones por mantener cuatro ramas.
+aprobadas; no eliminar una superficie ni sus acciones por mantener cuatro ramas.
 Rail/sidebar siguen disponibles para futuros Business/Admin, no consumer.
 
-MIG-003B A-C: CONTRACT_READY; baseline CLOSED, implementacion NOT_STARTED y
-paridad PENDING_IMPLEMENTATION. La revision/autorizacion del usuario y decisiones
-de producto del alcance afectado preceden D-G; MIG-010A BLOCKED,011..015 GATED.
+MIG-003B A-C: baseline CLOSED y producto APPROVED el03/10/2026; PD-01..05
+RESOLVED y D-G AUTHORIZED. Ver docs/mig003b/PRODUCT-REVIEW.md.
+Header oscuro fijo; publicos via native/bridge, dependientes de Auth/roles ocultos.
+Contexto publico ES/PA/WORLDWIDE global en memoria, sin persistencia/inferencia.
+Favorites significa liked menus. Tarea010A actual: baseline003B ACCEPTED;
+revision fina global posterior, sin reabrir navbar salvo regresion real.
+MIG-010A DONE de fase segun criterio explicito de la continuacion actual:
+sin P0/P1 conocidos,331 tests/build/QA verdes, P2/P3 en docs/mig010a.
+Equivalencia fina PARTIAL; no declarar aprobacion global ni MATCHED de GIFs.
+MIG-011 A-C COMPLETE, Visual Contract CLOSED, implementacion NOT_STARTED;
+overall NOT_DONE. D-G requiere otro encargo;012..015 GATED. Ver docs/MIG-011.md.
+Backend solo local por decision humana: AppConfig localhost8080 en development
+y production; nunca origin API remoto. Bridge web legacy es dependencia distinta.
 Ver `docs/contracts/MIG-003B-NAVBAR-VISUAL-CONTRACT.md`.
 
 
@@ -552,4 +563,52 @@ At the end of every task report:
 10\. Unresolved issues
 
 11\. Recommended next migration task
+
+## UI/UX Pro Max - FUDI Usage Policy
+
+The repository-local skill `.agents/skills/ui-ux-pro-max/SKILL.md` is installed
+as a visual-quality and UX critique skill. Read it when reviewing/polishing
+visual or interactive migration work. It is NOT the design authority for FUDI.
+It is local tooling, ignored by Git, not required by app builds or tests.
+When absent in another checkout, use the committed authority policy and
+record that the local skill was unavailable; do not silently install tooling.
+
+Source-of-truth priority:
+
+1. Approved FUDI product decisions.
+2. Current Visual Contract for the migration phase.
+3. Current Angular product baseline.
+4. FUDI Design System.
+5. UI/UX Pro Max guidance.
+
+Use UI/UX Pro Max to identify:
+
+- Generic AI-looking composition and excessive cardification.
+- Repetitive hierarchy, arbitrary spacing/radii and weak typography hierarchy.
+- Generic motion, unnecessary decoration and poor interaction feedback.
+- Weak responsive composition, density, accessibility and visual polish issues.
+
+DO NOT use UI/UX Pro Max to:
+
+- Generate a new design system or choose a new visual style for FUDI.
+- Replace the approved palette, Archivo / Archivo Condensed or original logo.
+- Reorder sections or change information architecture.
+- Remove approved animations or interactions.
+- Invent new cards, gradients, glass, colors or effects.
+- Simplify Angular UX because another pattern is recommended.
+- Redesign a screen without explicit product approval.
+
+For migrated screens, the Angular/FUDI Visual Contract defines WHAT the
+experience should be. This skill may help improve HOW accurately and
+professionally that experience is implemented in Flutter. When guidance
+conflicts with the Visual Contract, the Visual Contract always wins.
+
+Use targeted local `--domain ux` / `--stack flutter` searches and inspect the
+returned guidance. Do not run `--design-system`, `--persist`, `--force` or design
+dials for routine FUDI migration/polish; those require explicit product approval
+and a revised contract. This policy also overrides bundled references/examples.
+
+Report findings with evidence, severity, region and contract reference. Correct
+only within the active task; preserve functional boundaries and migration gates.
+Installing this skill does not authorize UI changes or start the next phase.
 

@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/config/app_config.dart';
+import '../../core/market/public_market.dart';
 import '../../core/network/generated_api_client.dart';
 import 'data/home_models.dart';
 import 'data/home_repository.dart';
@@ -13,15 +14,7 @@ final homeRepositoryProvider = Provider<HomeRepository>(
   ),
 );
 
-class HomeMarketSelection extends Notifier<HomeMarket> {
-  @override
-  HomeMarket build() => HomeMarket.es;
-  void select(HomeMarket market) => state = market;
-}
-
-final homeMarketProvider = NotifierProvider<HomeMarketSelection, HomeMarket>(
-  HomeMarketSelection.new,
-);
+final homeMarketProvider = publicMarketProvider;
 
 CancelToken _cancellation(Ref ref) {
   final token = CancelToken();

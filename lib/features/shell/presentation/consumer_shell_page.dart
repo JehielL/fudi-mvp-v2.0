@@ -1,9 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../app/l10n/generated/app_localizations.dart';
-import '../../../app/navigation/app_destination.dart';
-import '../../../design_system/design_system.dart';
+import 'consumer_navigation.dart';
 
 class ConsumerShellPage extends StatelessWidget {
   const ConsumerShellPage({super.key, required this.navigationShell});
@@ -12,21 +10,11 @@ class ConsumerShellPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final strings = AppLocalizations.of(context);
-    return FudiAppShell(
-      navigationLabel: strings.navPrimary,
-      destinations: [
-        for (final destination in AppDestination.values)
-          FudiNavigationDestination(
-            label: destination.label(strings),
-            icon: destination.icon,
-          ),
-      ],
+    return ConsumerNavigation(
       selectedIndex: navigationShell.currentIndex,
-      autofocusNavigation: true,
-      onDestinationSelected: (index) => navigationShell.goBranch(
-        index,
-        initialLocation: index == navigationShell.currentIndex,
+      onHome: () => navigationShell.goBranch(
+        0,
+        initialLocation: navigationShell.currentIndex == 0,
       ),
       body: navigationShell,
     );
